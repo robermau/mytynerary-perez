@@ -1,11 +1,13 @@
 import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
+import {Link as LinkRouter} from 'react-router-dom';
+
 
 
 const navigation = [
-  { name: "Home", href: "#", current: false },
-  { name: "Cities", href: "#", current: false },
+  { name: "Home", to: "/", current: false },
+  { name: "Cities", to: "/cities", current: false },
   ,
 ];
 
@@ -17,59 +19,60 @@ export default function Navbar() {
   return (
     <Disclosure
       as="nav"
-      className="sticky justify-between h-24 opacity-75 flex-column bg-amber-500"
+      className="sticky h-24 bg-amber-500"
     >
       {({ open }) => (
         <>
-          <div className="mx-auto sm:px-6">
+          <div className="">
             <div className="flex items-center justify-between h-16">
-              <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+              <div className="items-center sm:hidden">
 
 
                 {/* Mobile menu button*/}
-                <Disclosure.Button className="inline-flex items-center justify-center p-2 text-gray-400 rounded-md hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
-                  <span className="sr-only">Open main menu</span>
+               
+                <Disclosure.Button className="inline-flex items-center justify-center text-gray-400 rounded-md hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                  {/* <span className="sr-only">Open main menu</span>
                   {open ? (
-                    <XIcon className="block w-6 h-6" aria-hidden="true" />
-                  ) : (
-                    <MenuIcon className="block w-6 h-6" aria-hidden="true" />
-                  )}
-                </Disclosure.Button>
+                    <XIcon className="block w-8 h-6" aria-hidden="true" />) : 
+                    (
+                    <MenuIcon className="block w-8 h-6" aria-hidden="true" /> )  
+                     } */}
+                </Disclosure.Button> 
+                
               </div>
-              <div className="flex items-center justify-center flex-1 h-10 sm:items-stretch sm:justify-start">
-                <div className="flex items-center flex-shrink-0">
+              <div className="flex flex-row sm:items-stretch sm:justify-start lg:justify-center">
+              
                  <img
-                    className="h-12"
+                    className="h-12 sm:w-14"
                     src="https://imge.cloud/images/2022/06/07/rK78kr.png"
                     alt="faraon"
                   />
                  
-                </div>
-                <div className="align sm:block sm:ml-6">
-                  <div className="flex space-x-4">
+              
+                <div className="">
+                  
                     {navigation.map((item) => (
-                      <a
-                        key={item.name}
-                        href={item.href}
-                        className={classNames(
+                     <LinkRouter to={item.to}  key={item.name} 
+                       className={classNames(
                           item.current
                             ? "bg-gray-900 text-white"
                             : "text-gray-900 hover:bg-gray-700 hover:text-white",
-                          "px-3 py-2 rounded-md text-3xl font-medium"
+                          " rounded-md sm:px-2 py-2 px-1 sm:font-small"
                         )}
                         aria-current={item.current ? "page" : undefined}
                       >
                         {item.name}
-                      </a>
+                    
+                      </LinkRouter>
                     ))}
-                  </div>
+                  
                 </div>
               </div>
-              <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+              <div className="right-0 sm:static sm:pr-0">
 
                 
                 {/* Profile dropdown */}
-                <Menu as="div" className="relative ml-3">
+                <Menu as="div" className="relative ">
                   <div>
                     <Menu.Button className="flex text-sm bg-gray-800 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                       <span className="sr-only">Open user menu</span>
@@ -89,7 +92,7 @@ export default function Navbar() {
                     leaveFrom="transform opacity-100 scale-100"
                     leaveTo="transform opacity-0 scale-95"
                   >
-                    <Menu.Items className="absolute right-0 w-48 py-1 mt-2 origin-top-right bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                    <Menu.Items className="absolute right-0 w-48 mt-2 origin-top-right bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                       <Menu.Item>
                         {({ active }) => (
                           <a
@@ -137,12 +140,11 @@ export default function Navbar() {
           </div>
 
           <Disclosure.Panel className="sm:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-amber-500">
+            <div className="px-2 pb-3 space-y-1 x bg-amber-500">
               {navigation.map((item) => (
+                <LinkRouter to={item.to}  key={item.name}>
                 <Disclosure.Button
-                  key={item.name}
                   as="a"
-                  href={item.href}
                   className={classNames(
                     item.current
                       ? "bg-gray-900 text-white"
@@ -153,6 +155,7 @@ export default function Navbar() {
                 >
                   {item.name}
                 </Disclosure.Button>
+                </LinkRouter>
               ))}
             </div>
           </Disclosure.Panel>

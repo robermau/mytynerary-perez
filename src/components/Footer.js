@@ -4,11 +4,11 @@ import { BsFacebook } from "react-icons/bs";
 import { BsInstagram } from "react-icons/bs";
 import { BsTwitter } from "react-icons/bs";
 import { BsTwitch } from "react-icons/bs";
-
+import {Link as LinkRouter} from 'react-router-dom';
 
 const navigation = [
-    { name: "Home", href: "#", current: false },
-    { name: "Cities", href: "#", current: false },
+    { name: "Home", to: "/", current: false },
+    { name: "Cities", to: "/cities", current: false },
     ,
 ];
 
@@ -34,23 +34,23 @@ export default function Footer() {
            
             <div className="">
                 {navigation.map((item) => (
-                    <Disclosure.Button
-                        key={item.name}
-                        as="a"
-                        href={item.href}
-                        className={classNames(
-                            item.current
-                                ? "bg-gray-900 text-white"
-                                : "text-white  hover:bg-gray-900 hover:text-white",
-                            "px-3 py-2 rounded-md text-base font-medium"
+                     <LinkRouter to={item.to}  key={item.name}
+                   
+                       as="a"
+                    className={classNames(
+                        item.current
+                          ? "bg-gray-900 text-white"
+                          : "text-white  hover:bg-gray-900 hover:text-white",
+                          "   rounded-md px-1 text-base font-medium"
                         )}
                         aria-current={item.current ? "page" : undefined}
-                    >
+                        >
                         {item.name}
-                    </Disclosure.Button>
+                      
+                    </LinkRouter>
                 ))}
             </div>
-            <p className="footertext"> © Todos los Derechos Reservados</p>
+            <p className="pt-10 mb-10 footertext"> © Todos los Derechos Reservados</p>
 
         </Disclosure>
     );

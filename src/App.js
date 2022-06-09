@@ -1,8 +1,11 @@
 import NavBar from "./components/NavBar.js";
 import './App.css';
-import Main from './components/Main.js';
+import Index from './pages/Index.js';
 import "./index.css";
 import Footer from './components/Footer.js';
+import {Routes,Route} from 'react-router-dom';
+import Cities from './pages/cities';
+
 
 
 
@@ -11,8 +14,13 @@ function App() {
     
    <div className="App">
      <NavBar />
-      <Main /> 
+      <Routes>
+        <Route path="/"element={<Index/>}/>
+        <Route path="/cities"element={<Cities/>}/>
+         </Routes> 
+         
       <Footer />
+      
      </div>
 
   );
