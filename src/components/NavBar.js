@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
-import { MenuIcon, XIcon } from "@heroicons/react/outline";
+// import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import {Link as LinkRouter} from 'react-router-dom';
 
 
