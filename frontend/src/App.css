@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Devonshire&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
 
 * {
 margin: 0;
@@ -13,13 +13,12 @@ box-sizing: border-box ;
 .App {
   text-align: center;
   font-size: 2rem;
- 
+
 }
 
 
 
 .main {
-
 height: auto;
 display:flex;
 flex-direction: column;
@@ -33,18 +32,19 @@ background-repeat: no-repeat;
   background-image: url("https://imge.cloud/images/2022/06/08/rV3Akf.jpg");
   background-size:cover;
   background-repeat: no-repeat;
-
+  background-attachment: fixed;
   height:100rem;
   display:flex;
   flex-direction:column;
   justify-content:space-evenly;
   align-items:center;
   
+
 }
 
 
 h1 , h2 {
- 
+
   font-size: 2rem;
    font-weight:bold;
    text-shadow: 0 0 10px white, 0 0 10px white, 0px 0px 10px white;
@@ -69,7 +69,7 @@ font-weight:bold;
   font-weight: bolder;
   font-size: 2rem;
  }
- 
+
  .callToAction:hover {
   transform: scale(1.2) rotate(10deg);
   background-color: #fa725a;
@@ -84,13 +84,16 @@ width:40%;
 
 .textMain {
 font-family: 'Devonshire', cursive;
-font-size: 3rem;
-color:#8A5906;
+font-size: 2.5rem;
+line-height: 1;
+letter-spacing:0.4rem;
+color:black;
 height:5rem;
 background-color:#FACD81 ;
 border-radius: .8rem;
 margin-top:1rem;
 height:auto;
+text-shadow: 0 0 10px white, 0 0 10px white, 0px 0px 10px white;
 
 }
 
@@ -101,9 +104,9 @@ height:auto;
   z-index: 1;
   width:90%;
 
-  
+
  }
- 
+
  .main_div::before {
   content: '';
   position: absolute;
@@ -117,7 +120,7 @@ height:auto;
   border-left: 3px solid #E71414;
   transition: 0.5s;
  }
- 
+
  .main_div::after {
   content: '';
   position: absolute;
@@ -131,32 +134,32 @@ height:auto;
   border-bottom: 3px solid #E71414;
   transition: 0.5s;
  }
- 
+
  .main_div:hover::before {
   width: 100%;
   height: 100%;
  }
- 
+
  .main_div:hover::after {
   width: 100%;
   height: 100%;
  }
- 
 
- 
+
+
 .carrousel {
-  
- width:80%; 
+
+ width:80%;
  margin-bottom:1rem;
  background-color:white;
-  padding-top:2rem; 
+  padding-top:2rem;
  background-color:#B30F0F;
  }
 
- 
+
  footer {
    background-color:#B30F0F;
-  
+
  }
  .imgCarrousel{
    height:15rem;
@@ -176,11 +179,11 @@ height:auto;
   align-items:center;
   width: 7rem;
   height:5rem;
-  
+
 }
 
 .footertext {
-  font-size :1rem; 
+  font-size :1rem;
   display:flex;
   align-items:center;
   color: white;
@@ -197,15 +200,32 @@ margin-top: 5rem;
   background-image: url("https://imge.cloud/images/2022/06/08/rV3Akf.jpg");
   background-size:cover;
   background-repeat: no-repeat;
-  height:100rem;
+  height:auto;
   display:flex;
   flex-direction:column;
-  width:100%;
+  justify-content:space-between;
+  width:auto;
   align-items:center;
- 
- 
-
-  
-
-  
+  background-attachment: fixed;
+  opacity: 90%;
 }
+
+.cardContainer {
+display:flex;
+flex-direction:row;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.img-card {
+height:15rem;
+width:30rem;
+object-fit:cover;
+}
+
+.btn-nav {
+display:flex;
+flex-direction:row;
+justify-content:space-between;
+}
+
