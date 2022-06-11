@@ -19,13 +19,14 @@ box-sizing: border-box ;
 
 
 .main {
-height: auto;
+
 display:flex;
 flex-direction: column;
 align-items:center;
 background-image: url("https://ampascachi.com/images/evergreen/africa/egipto/banner-egipto.jpg");
 background-size:cover;
 background-repeat: no-repeat;
+
 }
 
 .sencond-banner {
@@ -33,7 +34,6 @@ background-repeat: no-repeat;
   background-size:cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  height:100rem;
   display:flex;
   flex-direction:column;
   justify-content:space-evenly;
@@ -45,35 +45,65 @@ background-repeat: no-repeat;
 
 h1 , h2 {
 
-  font-size: 2rem;
+  font-size: 1rem;
    font-weight:bold;
    text-shadow: 0 0 10px white, 0 0 10px white, 0px 0px 10px white;
+  margin-bottom:3rem;
+  padding: 0 1rem;
+  
+   }
+
+h1{
+  margin-top:3rem;
+  }
+
+
+.box-text{
+  background-color:white;
+  border-radius: 50%;
+ opacity: 85%;
+ width:15rem;
+ margin-left: 3rem;
 
 }
 
-
 h3 { font-family: 'Devonshire', cursive;
-font-size : 1.8em;
+font-size : 2.5rem;
 font-weight:bold;
    text-shadow: 0 0 10px white, 0 0 10px white, 0px 0px 10px white;
-   height: 9rem;
-   margin-bottom:2rem;
+   background-color:#B30F0F;
+   border-radius: .5rem;
+  
+   
+   
 
 }
 .callToAction {
-  padding: 0.6em 1em;
+  padding: 0.7em 0.6em;
   border: 4px solid red;
   transition: ease-in-out 0.3s;
   background-color: transparent;
   color: black;
   font-weight: bolder;
   font-size: 2rem;
+  margin-bottom:3rem;
+  margin-top: 4rem;
+  margin-left:2rem;
+  border-radius: 50%;
+
+
  }
+ a.callToAction {
+ padding-bottom:2rem;
+
+ }
+
 
  .callToAction:hover {
   transform: scale(1.2) rotate(10deg);
   background-color: #fa725a;
   color: white;
+
  }
 
 
@@ -84,30 +114,26 @@ width:40%;
 
 .textMain {
 font-family: 'Devonshire', cursive;
-font-size: 2.5rem;
+font-size: 2rem;
 line-height: 1;
 letter-spacing:0.4rem;
 color:black;
-height:5rem;
 background-color:#FACD81 ;
-border-radius: .8rem;
 margin-top:1rem;
-height:auto;
 text-shadow: 0 0 10px white, 0 0 10px white, 0px 0px 10px white;
-
 }
 
 
 .textMain  {
+  margin-top:10rem;
   --color: #3992e6;
   position: relative;
   z-index: 1;
-  width:90%;
-
-
+  width: 90%;
  }
 
  .main_div::before {
+
   content: '';
   position: absolute;
   width: 30px;
@@ -122,6 +148,7 @@ text-shadow: 0 0 10px white, 0 0 10px white, 0px 0px 10px white;
  }
 
  .main_div::after {
+ 
   content: '';
   position: absolute;
   width: 30px;
@@ -138,9 +165,11 @@ text-shadow: 0 0 10px white, 0 0 10px white, 0px 0px 10px white;
  .main_div:hover::before {
   width: 100%;
   height: 100%;
+  
  }
 
  .main_div:hover::after {
+ 
   width: 100%;
   height: 100%;
  }
@@ -149,7 +178,7 @@ text-shadow: 0 0 10px white, 0 0 10px white, 0px 0px 10px white;
 
 .carrousel {
 
- width:80%;
+ width:65%;
  margin-bottom:1rem;
  background-color:white;
   padding-top:2rem;
@@ -208,6 +237,7 @@ margin-top: 5rem;
   align-items:center;
   background-attachment: fixed;
   opacity: 90%;
+ 
 }
 
 .cardContainer {
@@ -229,3 +259,67 @@ flex-direction:row;
 justify-content:space-between;
 }
 
+.Carrousel-box{
+display:flex;
+flex-direction:column;
+align-items:center;
+width:auto;
+}
+
+.text {
+display:flex;
+flex-direction:row-reverse;
+width:auto;
+align-content: center;
+justify-content:space-around;
+padding:1rem;
+
+}
+
+@media (max-width: 800px) {
+  .text , h3 {
+display:flex;
+flex-direction:column;
+flex-wrap:wrap;
+align-content: center;
+justify-content:space-around;
+margin-top:2rem;
+}
+
+}
+
+
+@media (max-width: 800px) {
+   h3 {
+display:flex;
+flex-direction:column;
+flex-wrap:wrap;
+align-content: center;
+justify-content:space-around;
+margin-top:2rem;
+width:auto;
+background-color:#B30F0F;
+   border-radius: .5rem;
+}}
+
+
+
+@media ( max-width:335px){
+  .Carrousel-box{
+display:flex;
+flex-direction:column;
+align-items:center;
+width:20rem;
+}
+}
+
+
+@media (max-width:390px) {
+.carrousel {
+
+ width:18rem;
+ margin-bottom:1rem;
+padding-top:2rem;
+ background-color:#B30F0F;
+ }
+}

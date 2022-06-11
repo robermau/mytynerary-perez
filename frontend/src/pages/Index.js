@@ -13,7 +13,7 @@ export default function Index() {
     <main className="mainContainer">
 
 
-      <div className="main ">
+      <div className="main">
         <img className="logo" src="https://imge.cloud/images/2022/06/07/rKUUz8.png"
           alt="logoportada"
         />
@@ -24,20 +24,28 @@ export default function Index() {
         </p>
 
       </div>
-
-      <div className="sencond-banner">
-        <h1> Discover stories, Travel in time </h1>
-        <h2> If you want to travel in the time </h2>
-        {navigation.map((item) => (
+  
+      <div className="sencond-banner ">
+      <div className='text'> 
+      {navigation.map((item) => (
           <LinkRouter to={item.to} key={item.name}
             className='callToAction'> TRAVEL HERE!!
           </LinkRouter>
+         
         ))}
+         
+       <div className='box-text'>
+     
+        <h1> Discover stories, Travel in time </h1>
+        <h2> If you want to travel in the time </h2>
+        </div>
+        </div >
+        <div className='Carrousel-box'> 
         <h3>POPULAR MYTINERARY</h3>
         <Carrousel />
-
+        </div>
       </div>
-
+    
 
     </main>
   )
