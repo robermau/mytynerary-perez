@@ -5,7 +5,7 @@ import { Link as LinkRouter } from 'react-router-dom';
 const navigation = [
 
   { name: "Cities", to: "/cities", current: false },
-  ,
+  
 ];
 
 export default function Index() {

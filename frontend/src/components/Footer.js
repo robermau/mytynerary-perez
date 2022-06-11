@@ -21,8 +21,10 @@ export default function Footer() {
 
         <Disclosure
             as="footer"
-            className="flex justify-around h-24" >
-            <div>
+            className="footer" >
+            
+          
+           
 
                 <div className="icon">
                     <BsFacebook />
@@ -30,9 +32,8 @@ export default function Footer() {
                     <BsTwitter />
                     <BsTwitch />
                 </div>
-            </div>
+            
            
-            <div className="">
                 {navigation.map((item) => (
                      <LinkRouter to={item.to}  key={item.name}
                    
@@ -41,16 +42,17 @@ export default function Footer() {
                         item.current
                           ? "bg-gray-900 text-white"
                           : "text-white  hover:bg-gray-900 hover:text-white",
-                          "   rounded-md px-1 text-base font-medium"
+                          "   rounded-md font-medium "
                         )}
                         aria-current={item.current ? "page" : undefined}
                         >
                         {item.name}
                       
                     </LinkRouter>
+                    
                 ))}
-            </div>
-            <p className="pt-10 mb-10 footertext"> © Todos los Derechos Reservados</p>
+         
+            <p className="footertext"> © All rights reserved</p>
 
         </Disclosure>
     );
