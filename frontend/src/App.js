@@ -7,6 +7,8 @@ import {Routes,Route} from 'react-router-dom';
 import Cities from './pages/cities';
 import { ArrowCircleUpIcon } from '@heroicons/react/solid';
 import ScrollToTop from "react-scroll-to-top";
+import Details from './components/Details';
+
 
 
 
@@ -20,6 +22,7 @@ function App() {
       <Routes>
         <Route path="/"element={<Index/>}/>
         <Route path="/cities"element={<Cities/>}/>
+        <Route path="/city/:id"element={<Details/>}/>
          </Routes> 
 
          <ScrollToTop className="absolute w-12 h-12 text-black -z-1 right-2" 
