@@ -25,25 +25,26 @@ export default function Index() {
 
       </div>
   
-      <div className="sencond-banner ">
-      <div className='text'> 
+      <div className="sencond-banner">
+      
       {navigation.map((item) => (
-          <LinkRouter to={item.to} key={item.name}
-            className='callToAction'> TRAVEL HERE!!
+          <LinkRouter to={item.to} key={item.name}> <section className="relative flex flex-col items-center justify-center w-screen px-3 py-0 text-center text-white h-96">
+            <div className="absolute top-0 left-0 w-full h-full overflow-hidden video-docker">
+                <video className="absolute object-cover min-w-full min-h-full " src="https://egypt.travel/media/2428/thesphinxavenue.mp4" type="video/mp4" autoPlay muted loop></video>
+            </div>
+            <div className="space-y-2 video-content">
+                <h1 className="text-6xl font-light">Wellcome!! to travel Ancient Egypt</h1>
+                <h3 className="text-3xl font-light">click here for know a few</h3>
+            </div>
+        </section>
           </LinkRouter>
          
         ))}
          
-       <div className='box-text'>
+         <Carrousel />
      
-        <h1> Discover stories, Travel in time </h1>
-        <h2> If you want to travel in the time </h2>
-        </div>
-        </div >
-        <div className='Carrousel-box'> 
-        <h3>POPULAR MYTINERARY</h3>
-        <Carrousel />
-        </div>
+        
+        
       </div>
     
 

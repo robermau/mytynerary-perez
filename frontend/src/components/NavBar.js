@@ -19,7 +19,7 @@ export default function Navbar() {
   return (
 
       
-      <Disclosure as="nav" className="h-24 btn-nav bg-amber-500">
+      <Disclosure as="nav" className="h-24 bg-gray-100 btn-nav">
           
           
         {navigation.map((item) => (

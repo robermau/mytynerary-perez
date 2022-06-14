@@ -21,9 +21,10 @@
   background-image: url("https://ampascachi.com/images/evergreen/africa/egipto/banner-egipto.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  
 }
 
-.sencond-banner {
+.sencond-banner, .mainCardContainer {
   background-image: url("https://imge.cloud/images/2022/06/08/rV3Akf.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -32,6 +33,8 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  
+  
 }
 
 h1,
@@ -63,28 +66,8 @@ h3 {
   text-shadow: 0 1px 7px black, 0 0 7px white, 0px 0px 7px white;
 }
 
-.callToAction {
-  padding: 0.7em 0.6em;
-  border: 4px solid red;
-  transition: ease-in-out 0.3s;
-  background-color: transparent;
-  color: black;
-  font-weight: bolder;
-  font-size: 2rem;
-  margin-bottom: 3rem;
-  margin-top: 4rem;
-  margin-left: 2rem;
-  border-radius: 50%;
-}
-a.callToAction {
-  padding-bottom: 2rem;
-}
 
-.callToAction:hover {
-  transform: scale(1.2) rotate(10deg);
-  background-color: #fa725a;
-  color: white;
-}
+
 
 .logo {
   width: 30rem;
@@ -111,50 +94,15 @@ a.callToAction {
   width: 90%;
 }
 
-.main_div::before {
-  content: "";
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  background: transparent;
-  top: -7px;
-  left: -7px;
-  z-index: -5;
-  border-top: 3px solid #e71414;
-  border-left: 3px solid #e71414;
-  transition: 0.5s;
-}
 
-.main_div::after {
-  content: "";
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  background: transparent;
-  bottom: -7px;
-  right: -7px;
-  z-index: -5;
-  border-right: 3px solid #e71414;
-  border-bottom: 3px solid #e71414;
-  transition: 0.5s;
-}
-
-.main_div:hover::before {
-  width: 100%;
-  height: 100%;
-}
-
-.main_div:hover::after {
-  width: 100%;
-  height: 100%;
-}
 
 .carrousel {
   width: 65%;
   margin-bottom: 1rem;
   background-color: white;
   padding-top: 2rem;
-  background-color: #b30f0f;
+  background-color: black;
+  margin-top:1rem;
 }
 
 footer {
@@ -203,12 +151,13 @@ footer {
   background-image: url("https://imge.cloud/images/2022/06/08/rV3Akf.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  height: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
    width:100%;
   align-items: center;
   background-attachment: fixed;
+  flex-grow:1;
  
   
 }
@@ -238,26 +187,9 @@ footer {
   width: auto;
 }
 
-.text {
-  display: flex;
-  flex-direction: row-reverse;
-  width: auto;
-  align-content: center;
-  justify-content: space-around;
-  padding: 1rem;
-}
 
-@media (max-width: 800px) {
-  .text,
-  h3 {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: space-around;
-    margin-top: 2rem;
-  }
-}
+
+
 
 @media (max-width: 800px) {
   h3 {
@@ -314,5 +246,90 @@ footer {
 width:18rem;
   
  }
+}
+
+.video-docker video {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.video-docker::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.video-content {
+  z-index: 2;
+}
+
+
+.container {
+ width: 100%;
+  min-height:100vh;
+  border-radius: 20px;
+ display:flex;
+  -webkit-transition: 1.5s ease-in-out;
+  transition: 1.5s ease-in-out;
+  transform-style: preserve-3d;
+}
+
+.side {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  padding: 20px 50px;
+  color: #fff;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  border-radius: 20px;
+}
+.content {
+  transform: translatez(70px) scale(0.8);
+  line-height: 1.5em;
+}
+.content h1 {
+  position: relative;
+}
+.content p {
+  margin-top: 50px;
+  line-height: 2em;
+}
+.content h1:before {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  height: 3px;
+  background-color: #3e3;
+  width: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.front {
+  z-index: 2;
+  background-size: 100vh;
+  background-size: cover;
+  background-image: url(https://userscontent2.emaze.com/images/f9538183-0ff9-478f-b964-c8ab90421e3b/3d28e192fda5c17250f96a2779c84475.jpg);
+}
+.back {
+  background-color: #333;
+  transform: rotateY(180deg);
+  z-index: 0;
+  padding-top: 10px;
+  background-image: url(https://userscontent2.emaze.com/images/f9538183-0ff9-478f-b964-c8ab90421e3b/3d28e192fda5c17250f96a2779c84475.jpg);
+}
+.container:hover {
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+.back h1 {
+  margin: 0;
 }
 
