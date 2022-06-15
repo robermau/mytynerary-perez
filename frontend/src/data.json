@@ -3,62 +3,76 @@
 	{
 		"name": "Alejandria",
 	     "img": "https://i.imgur.com/aJaEOcG.jpg",
-		"id" :"1"
+		"description":"Alejandría es una ciudad portuaria mediterránea de Egipto. Durante el período helenístico, fue el hogar de un faro que se incluye entre las Siete maravillas del mundo antiguo, junto con una importante biblioteca. ",
+		"population":"5.039.975"
 	},
 	{
 		"name": "Asiut",
 		"img": "https://i.imgur.com/tMKgpZm.jpg",
-		"id" :"2"
+		"description":"En la actualidad es una importante ciudad, siendo la capital de la gobernación homónima.En sus inmediaciones se construyó una gran presa con esclusas, concluida en 1902, de la que parte el canal de Ibrahimia que comunica con el Canal de José, el mayor canal de irrigación de Egipto, que aporta las aguas del río Nilo al lago Birket Qarun, en el-Fayum. Dispone de universidad Figuras de soldados de la tumba de Mesehti (Dinastía XI). Museo Egipcio de El Cairo.",
+		"population": "462.061"
 	},
+
 	{
 		"name": "El Cairo",
 		"img": "https://i.imgur.com/lFFZC0D.png",
-		"id" :"3"
-	},
+		"description":"El Cairo está ubicada en las riberas e islas del río Nilo, al sur del delta. Hacia el sudoeste se encuentra la ciudad de Guiza y la antigua necrópolis de Menfis, con la meseta de Guiza y sus monumentales pirámides, como la Gran Pirámide. Al sur se encuentra el lugar donde se edificó la antigua ciudad de Menfis.",
+		"population":"9.153.135"
+	
+    }   
+	,    
 	{
 		"name": "El-Mahalla El-Kubra",
 		"img": "https://i.imgur.com/ZMpcEIO.jpg",
-		"id" :"4"
-	},
+		"description":"Se encuentra situada a 60 km al norte de El Cairo en la delta del Nilo y dispone de agricultura pero es más conocida por su industria textil, en ella se encuentra la factoría de Misr Spinning & Weaving Company que dispone de unos 27.000 trabajadores y tiene su sede en la calle de Talaat Harb.",
+	     "population":"522.799"
+	},   
 	{
 		"name": "El Mansura",
 		"img": "https://i.imgur.com/zmzN0qU.jpg",
-		"id" :"5"
-	},
+		"description":"El Mansura o Al-Mansurah es una ciudad de Egipto, capital de la gobernación de Dacalia y la novena ciudad más grande del país.Está situada en la ribera del ramal del Nilo denominado Damieta, en el delta del Nilo.",
+		"population":"548.259"
+	},   
   {
 		"name": "Fayún",
 		"img": "https://i.imgur.com/bSx8qu3.jpg",
-		"id" :"6"
-	},
+	    "description":"Fayún  es una ciudad del norte de Egipto, a 100 km al sudoeste del El Cairo y situada a orillas del lago homónimo, en el oasis de Fayún. Es la capital de la gobernación de Fayún. ",
+	     "population":"475.139"
+	},   
   {
 		"name": "Guiza",
 		"img": "https://i.imgur.com/3BG5DEs.jpg",
-		"id" :"7"
-	},
+		"description":"Guiza es una ciudad de Egipto situada en el Nilo, a unos 20 km al suroeste del centro de El Cairo, formando parte del área metropolitana de la capital egipcia. Es la capital de la gobernación del mismo nombre. ",
+		"population":"4.146.340"
+	},   
   {
 		"name": "Puerto Saíd",
         "img": "https://i.imgur.com/VjCIJMP.jpg",
-		"id" :"8"
-	},
+		"description":"Es una de las más bellas ciudades de Egipto y cuenta con numerosas casas antiguas, del siglo XIX, mostrando grandes balcones en sus fachadas. Al otro lado del canal se ubica Port Fouad, con la cual se halla conurbada, estando comunicadas mediante transbordadores gratuitos.",
+		"population":"751.073"
+	},   
   {
 		"name": "Schubra Al Khaymah ",
-		"state": "Chubut",
 		"img": "https://i.imgur.com/QQIS88b.jpg",
-		"id" :"9"
-	},
+		"description":"Se encuentra ubicado al nordeste del delta del Nilo, en la ribera oriental del ramal de Damietta.",
+		"population":"751.073"
+	},   
   {
 		"name": "Suez",
 		"img": "https://i.imgur.com/3gQDLYN.jpg",
-		"id" :"10"
-	},
+		"description":"Suez, ciudad del Norte de África, perteneciente a Egipto, capital de la gobernación homónima, situada en el istmo de Suez que une África con Asia a través del Sinaí, y ubicada cerca de la salida del denominado canal de Suez, en el golfo de Suez que desemboca en el mar Rojo. Dista 134 km de la capital, El Cairo, y 88 km de Ismailia.",
+		"population":"751.073"
+	},   
   {
 		"name": "Tanta",
 		"img": "https://i.imgur.com/JdoyGzw.jpg",
-		"id" :"11"
-	},
+		"description":"Tanta es una ciudad del Bajo Egipto, la capital de la gobernación de Gharbia, que está situada en el centro del delta del Nilo, a 83 km al norte de El Cairo, a mitad de camino de Damietta (Dumyat) y Rosetta (Rashid), las ciudades costeras de los dos ramales principales del río Nilo.",
+		"population":"508.754"
+	},   
   {
 		"name": "al-Khusus",
 		"img": "https://i.imgur.com/1h2ksnE.jpg",
-		"id" :"12"
-	}
+		"description":"Al-Khuṣūṣ es un distrito de la gobernación de Caliubia.​Se encuentra ubicado al nordeste del delta del Nilo, en la ribera oriental del ramal de Damietta.",
+		"population":"459.586"
+	}    
 ]

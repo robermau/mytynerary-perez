@@ -13,11 +13,11 @@ export default function Index() {
     <main className="mainContainer">
 
 
-      <div className="main">
+      <div className="w-full main">
         <img className="logo" src="https://imge.cloud/images/2022/06/07/rKUUz8.png"
           alt="logoportada"
         />
-        <p className="textMain main_div" >
+        <p className="font-light textMain main_div" >
           "Find
           your perfect trip, designed by insiders who know and love
           their cities!".
@@ -28,9 +28,9 @@ export default function Index() {
       <div className="sencond-banner">
       
       {navigation.map((item) => (
-          <LinkRouter to={item.to} key={item.name}> <section className="relative flex flex-col items-center justify-center w-screen px-3 py-0 text-center text-white h-96">
-            <div className="absolute top-0 left-0 w-full h-full overflow-hidden video-docker">
-                <video className="absolute object-cover min-w-full min-h-full " src="https://egypt.travel/media/2428/thesphinxavenue.mp4" type="video/mp4" autoPlay muted loop></video>
+          <LinkRouter to={item.to} key={item.name}> <section className="relative flex flex-col items-center justify-center w-full py-0 text-center text-white h-96">
+            <div className="absolute top-0 w-full h-full overflow-hidden video-docker">
+                <video className="absolute object-fill w-full min-h-full " src="https://egypt.travel/media/2428/thesphinxavenue.mp4" type="video/mp4" autoPlay muted loop></video>
             </div>
             <div className="space-y-2 video-content">
                 <h1 className="text-6xl font-light">Wellcome!! to travel Ancient Egypt</h1>

@@ -19,7 +19,7 @@ export default function Navbar() {
   return (
 
       
-      <Disclosure as="nav" className="h-24 bg-gray-100 btn-nav">
+      <Disclosure as="nav" className="h-24  btn-nav">
           
           
         {navigation.map((item) => (
@@ -27,7 +27,7 @@ export default function Navbar() {
             className={classNames(
               item.current
                 ? "bg-gray-900 text-white"
-                : "text-gray-900 hover:bg-gray-700 hover:text-white", " rounded-md m-4  p-2 sm:font-small"
+                : "text-white hover:bg-gray-900 hover:text-white", " rounded-md m-4  p-2 sm:font-small font-medium"
             )} aria-current={item.current ? "page" : undefined}> {item.name}
             
           </LinkRouter>

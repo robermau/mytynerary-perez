@@ -21,7 +21,7 @@ export default function Footer() {
 
         <Disclosure
             as="footer"
-            className="footer" >
+            className=" footer" >
             <div className="icon">
                 <BsFacebook />
                 <BsInstagram />
@@ -36,7 +36,7 @@ export default function Footer() {
                         item.current
                             ? "bg-gray-900 text-white"
                             : "text-white  hover:bg-gray-900 hover:text-white",
-                        "rounded-md font-medium ")}
+                        "rounded-md font-medium  ")}
                     aria-current={item.current ? "page" : undefined}>
                     {item.name}
                 </LinkRouter>

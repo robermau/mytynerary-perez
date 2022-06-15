@@ -1,15 +1,18 @@
 
+const express=require('express')
+const app = express()
+const Router = require("./routes/routes");
+const PORT = 4000
+
+
 require('dotenv').config()
 require('./config/database')
 
 
-
-const express=require('express')
-const app = express()
-
-const PORT = 4000
-
+app.use(express.json());
+app.use("/api", Router);
 app.set('port', PORT)
+
 
 
 
