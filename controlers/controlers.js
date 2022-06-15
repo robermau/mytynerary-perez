@@ -1,4 +1,4 @@
-const Cities = require("../models/models");
+const City = require("../models/models");
 const citiesControlers = {
 
 
@@ -25,7 +25,7 @@ getOneCity: async (req, res) => {
 
 
 addCity: async (req, res) => {
-    const { name, description, population,  image } = req.body.data 
+    const { name, description, population, image } = req.body.data 
     let city
     let error = null
 
@@ -96,7 +96,31 @@ removeCity : async (req,res) => {
   success:error ? false : true,
   error:error
 })
+},
+
+
+multiplesCities: async (req, res) => {
+    let city = []
+    const data = req.body.data
+    let error = null
+    try {
+        data.map(async (item) => {
+            await new City({
+                name: item.name,
+                population:item.population,
+                description: item.description,
+                image:item.image
+            }).save()
+        })
+    } catch (err) { error = err }
+    city = await City.find()
+    res.json({
+        response: error ? 'ERROR' : city,
+        success: error ? false : true,
+        error: error
+    })
 }
+
 
 } 
 module.exports=citiesControlers

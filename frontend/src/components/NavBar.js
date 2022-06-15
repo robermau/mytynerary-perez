@@ -19,7 +19,7 @@ export default function Navbar() {
   return (
 
       
-      <Disclosure as="nav" className="h-24  btn-nav">
+      <Disclosure as="nav" className="h-24 btn-nav">
           
           
         {navigation.map((item) => (
@@ -40,7 +40,7 @@ export default function Navbar() {
             <div className="user">
               <Menu.Button className="text-sm rounded-full focus:outline-none focus:ring-offset-2 focus:ring-white">
                
-              <img className="mt-5 mr-5 rounded-full h-9 w-9" src="https://w7.pngwing.com/pngs/789/888/png-transparent-computer-icons-login-person-user-avatar-log-smiley-desktop-wallpaper-sign.png" alt="" />
+              <img className="h-8 mt-5 mr-5 rounded-full w-9" src="https://w7.pngwing.com/pngs/789/888/png-transparent-computer-icons-login-person-user-avatar-log-smiley-desktop-wallpaper-sign.png" alt="" />
               </Menu.Button>
               
             </div>

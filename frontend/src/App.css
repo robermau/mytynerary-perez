@@ -85,6 +85,7 @@ h3 {
   color: black;
   background-color: black;
   margin-top: 1rem;
+  padding:1rem;
   text-shadow: 0 0 10px white, 0 0 10px white, 0px 0px 10px white;
   border-radius:5rem;
 }
@@ -225,7 +226,7 @@ footer {
     width: 18rem;
     margin-bottom: 1rem;
     padding-top: 2rem;
-    background-color: #b30f0f;
+    background-color: black;
   }
 }
 
@@ -303,45 +304,49 @@ width:18rem;
   backface-visibility: hidden;
   border-radius: 20px;
   align-items:center;
+  
 }
 .content {
   transform: translatez(70px) scale(0.8);
   line-height: 1.5em;
+  font-size:1rem;
+ 
  
 }
-.content h1 {
+.content h1  {
   position: relative;
+  color:black;
+  font-size:2rem;
+  
 }
 .content p {
   margin-top: 50px;
   line-height: 2em;
+  font-size:2rem;
+  color:white;
 }
-.content h1:before {
-  content: "";
-  position: absolute;
-  bottom: -20px;
-  height: 3px;
-  background-color: #3e3;
-  width: 70px;
-  left: 50%;
-  transform: translateX(-50%);
-}
+
+
 .front {
   z-index: 2;
   background-size: 100vh;
   background-size: cover;
-  background-image: url(https://viajes.nationalgeographic.com.es/medio/2021/01/12/egipto_6f0016be_1200x630.jpg);
+  background-color:#853500;
   object-fit:cover;
   border-radius: 5rem;
+  display:flex;
+  justify-content:center;
+  box-shadow: 0 0 10px white, 0 0 10px white, 0px 0px 10px white;
 }
 .back {
   background-size: cover;
   transform: rotateY(180deg);
   z-index: 0;
   padding-top: 10px;
-  background-image: url(https://fotografias.lasexta.com/clipping/cmsimages01/2021/09/26/D5AF03B9-F041-4BA0-948F-6957A22FE79D/98.jpg?crop=960,540,x0,y4&width=1900&height=1069&optimize=high&format=webply);
+  background-color:#853500;
   object-fit:cover;
   border-radius: 5rem;
+  box-shadow: 0 0 10px white, 0 0 20px white, 0px 0px 20px white;
  
 }
 .container:hover {
@@ -351,5 +356,17 @@ width:18rem;
 
 .back h1 {
   margin: 0;
+}
+
+.img-details {
+  height:25rem;
+  border-radius:1.5rem;
+}
+
+@media(max-width: 768px){
+.content p {
+  line-height: 2rem;
+font-size:1.3rem;
+}
 }
 

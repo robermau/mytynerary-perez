@@ -26,7 +26,7 @@ const Carrousel = () => {
         >
         {data.map(item =>
           <Carousel.Item key={item.id}>
-            <img className="imgCarrousel" width="100%" src={item.img} />
+            <img className="imgCarrousel" width="100%" src={item.image} />
             <h5 className="fontCarrousel">{item.name}</h5>
           </Carousel.Item>
         )}
