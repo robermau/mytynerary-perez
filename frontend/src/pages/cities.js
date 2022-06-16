@@ -1,8 +1,8 @@
 import Cards from "../components/Cards";
 import "../index.css";
 import React, { useEffect, useState } from "react";
-import data from '../data.json';
-
+// import data from '../data.json';
+import axios from 'axios';
 
 
 
@@ -13,18 +13,26 @@ export default function Cities() {
 
    const [city, setCity] = useState([])
    const [search, setSearch] = useState('')
+   const [results,setResults] = useState(city)
+
+
   
 
+  
    useEffect(() => {
-      setCity(data)
+      
+      axios.get("http://localhost:4000/api/cities")
+      
+      .then(response => setCity(response.data.response.cities))
+   
+       let citySearch = city.filter(city => city.name.toLowerCase().startsWith(search.trim().toLowerCase()))
+      
+      setResults(citySearch)
+   }, [search,city])
+   
+return (
 
-      let city = data.filter(city => city.name.toLowerCase().startsWith(search.trim().toLowerCase()))
-      setCity(city)
-   }, [search])
-
-   return (
-
-      <div className=" gap-y-8 backgroundError">
+     <div className=" gap-y-8 backgroundError">
          <form className="flex flex-row justify-center mt-3 mb-3 ">
             <label className="sr-only">
                Search
@@ -50,9 +58,9 @@ export default function Cities() {
                   }}
                   className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="Search"
-                  required/>
+                  required />
             </div>
-      
+
             <button
                type="submit"
                className="p-2.5 ml-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
@@ -68,12 +76,12 @@ export default function Cities() {
                   ></path>
                </svg>
             </button>
-            </form>
+         </form>
          <div className="justify-center cardContainer">
 
-            {city.length > 0 ? city.map(city =>  <Cards city={city} key={city.id}/> ) : <h1>not Found Results</h1> }
-            
-            </div>
+            {results.length > 0 ? results.map(city => <Cards city={city} key={city._id} />) : <h1>not Found Results</h1>}
+
+         </div>
 
       </div>
 

@@ -324,6 +324,7 @@ width:18rem;
   line-height: 2em;
   font-size:2rem;
   color:white;
+ 
 }
 
 
@@ -359,14 +360,19 @@ width:18rem;
 }
 
 .img-details {
-  height:25rem;
+  height:20rem;
   border-radius:1.5rem;
+  object-fit:contain;
 }
 
 @media(max-width: 768px){
 .content p {
   line-height: 2rem;
-font-size:1.3rem;
+font-size:.8rem;
 }
 }
 
+.btn-back{
+ background-color:black;
+ border-radius:1rem;
+}

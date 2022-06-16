@@ -3,15 +3,17 @@ const express=require('express')
 const app = express()
 const Router = require("./routes/routes");
 const PORT = 4000
+const cors = require('cors')
 
 
 require('dotenv').config()
 require('./config/database')
 
-
+app.use(cors())
 app.use(express.json());
 app.use("/api", Router);
 app.set('port', PORT)
+
 
 
 

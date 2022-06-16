@@ -1,5 +1,7 @@
 import { Link as LinkRouter } from 'react-router-dom'
 
+
+
 const Cards = ({city}) => {
 
     return (
@@ -7,7 +9,7 @@ const Cards = ({city}) => {
         <img className="rounded-t-lg img-card" src={city.image} alt="" />
         <h5 className="text-xl font-bold text-gray-900 dark:text-white">{city.name}</h5>
         <p className="text-base text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-        <LinkRouter to={`/city/${city.id}`} className="a-btn" > Read more
+        <LinkRouter to={`/city/${city._id}`} className="a-btn" > Read more
         </LinkRouter> 
 
        

@@ -9,7 +9,7 @@ getOneCity: async (req, res) => {
     let error = null
 
     try {
-        city = await Cities.findOne({ _id: id })
+        city = await City.findOne({ _id: id })
 
     } catch (err) {
         error = err
@@ -51,7 +51,7 @@ getCities: async (req, res) => {
     let cities
     let error = null
     try {
-        cities = await Cities.find()
+        cities = await City.find()
     } catch (err) { error = err }
     res.json({
         response: error ? 'ERROR' : { cities },
@@ -63,7 +63,7 @@ getCities: async (req, res) => {
 
 modifyCity: async (req, res) => {
     const id = req.params.id
-    const city = req.body.deta
+    const city = req.body.data
     let citydb
     let error = null
 
