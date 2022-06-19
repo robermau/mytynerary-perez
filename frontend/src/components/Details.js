@@ -29,7 +29,7 @@ export default function Details() {
     }, [])
 
     return (
-        <div className='mainCardContainer'>
+        <div className='mainCardContainer detailsContainer'>
             <div className="container">
                 <div className="front side">
                     <div className="content">
