@@ -10,7 +10,7 @@ const navigation = [
 
 export default function Index() {
   return (
-    <main className="mainContainer detailsContainer">
+    <main className="mainContainer ">
 
 
       <div className="w-full main">

@@ -4,6 +4,8 @@ import '../index.css';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { Link as LinkRouter } from 'react-router-dom';
+import Itineraries from '../components/Itineraries';
+
 
 
 
@@ -52,8 +54,11 @@ export default function Details() {
                         </LinkRouter>))}
 
                 </div>
+               
             </div>
+            <Itineraries />
         </div>
+        
     )
 
 
