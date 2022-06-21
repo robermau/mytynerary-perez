@@ -1,0 +1,322 @@
+[
+  {
+    /*EL CAIRO*/ 
+    "nameItineraty": " Cairo, travel as begin",
+    "imagePerson": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRuv8k4ViSE-Da_vwSHCMtwp4-goHZyKhe6K1yqr9mzoKrvfyQCCcMP1k4UjfYfp0UzYg&usqp=CAU",
+    "namePerson": "Mohamed Salah",
+    "precie": "5 billetes",
+    "hashtags": "#river #egypt #travel",
+    "likes": "0",
+    "duration": "3 hs",
+    "activitys": [
+      {
+        "nameActivity": "Egyptian Antiquities Museum",
+        "imageActivity": "https://cdn.getyourguide.com/img/location/54eb5b23a62bc.jpeg/68.jpg"
+      },
+
+      {
+        "nameActivity": "Nile River",
+        "imageActivity": "https://cdn.creatureandcoagency.com/uploads/2018/09/Nile-River-Facts-Image-2.jpg"
+      },
+
+      {
+        "nameActivity": "Old Cairo (Coptic Cairo)",
+        "imageActivity": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaYZz8z05EoLcKmfuGacRyG9u9cUvDRyh17w&usqp=CAU"
+      }
+    ]
+  },
+
+  {
+    "nameItineraty": "Things to Do",
+    "imagePerson": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Nasser_Ghanem_Al_Kholaifi_%28crop%29.jpg/240px-Nasser_Ghanem_Al_Kholaifi_%28crop%29.jpg",
+    "namePerson": "Nasser Al-Khelaïfi",
+    "precie": "5 billetes",
+    "hashtags": "#temple #egypt #ancient #travel",
+    "likes": "0",
+    "duration": "4 hs",
+    "activitys": [
+      {
+        "nameActivity": "Mosque of Muhammad Ali",
+        "imageActivity": "https://cdn.getyourguide.com/img/location/54eb5b23a62bc.jpeg/68.jpg"
+      },
+
+      {
+        "nameActivity": "Al-Azhar Park",
+        "imageActivity": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTt_KzsVe-mYdCia8N5dMDwaqqU1F6yni6ihQ&usqp=CAU"
+      },
+
+      {
+        "nameActivity": "Khan Al-Khalili",
+        "imageActivity": "https://upload.wikimedia.org/wikipedia/commons/7/74/%D8%AE%D8%A7%D9%86_%D8%A7%D9%84%D8%AE%D9%84%D9%8A%D9%84%D9%8A_1.jpg"
+      }
+    ]
+  },
+
+  {
+    "nameItineraty": "Egypt past",
+    "imagePerson": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Mohammed_bin_Rashid_Al_Maktoum_%2815-02-2021%29.jpg",
+    "namePerson": "Mohammed bin Rashid Al Maktoum",
+    "precie": "2 billetes",
+    "hashtags": "#temple #egypt #ancient #travel",
+    "likes": "0",
+    "duration": "4 hs",
+    "activitys": [
+      {
+        "nameActivity": "Citadel (al-Qalaa)",
+        "imageActivity": "https://media.tacdn.com/media/attractions-splice-spp-674x446/0b/27/6d/ac.jpg"
+      },
+
+      {
+        "nameActivity": "Cave Church",
+        "imageActivity": "https://admin.freetour.com/images/tours/30803/free-tour-to-the-cave-church-of-st-simon-01.jpg"
+      },
+
+      {
+        "nameActivity": "Cairo Festival City Mall",
+        "imageActivity": "https://media.tacdn.com/media/attractions-splice-spp-674x446/0b/ee/16/da.jpg"
+      }
+    ]
+    /*Alejandria*/
+  },
+
+  {
+    "nameItineraty": " Alejandria , sweet dreams",
+    "imagePerson": "https://www.sis.gov.eg/Content/Upload/slider/1202020135455121.jpg",
+    "namePerson": "Ahmad Al-Tayeb",
+    "precie": "5 billetes",
+    "hashtags": "#library #egypt #travel #tombs",
+    "likes": "0",
+    "duration": "2 hs",
+    "activitys": [
+      {
+        "nameActivity": "Library of Alexandria",
+        "imageActivity": "https://miro.medium.com/max/1200/1*4-H9L_CZAEqNiZmmfL9dzQ.jpeg"
+      },
+
+      {
+        "nameActivity": "Montazah Palace Gardens",
+        "imageActivity": "https://keepcalmandwander.com/wp-content/uploads/2017/05/Montaza-Palace-Gardens-Alexandria-Egypt-3-960x639.jpg"
+      },
+
+      {
+        "nameActivity": "Catacombs of Kom el Shoqafa",
+        "imageActivity": "https://9968c6ef49dc043599a5-e151928c3d69a5a4a2d07a8bf3efa90a.ssl.cf2.rackcdn.com/676968-1.jpg"
+      }
+    ]
+  },
+
+  {
+    "nameItineraty": "Egypt culture",
+    "imagePerson": "https://w0.peakpx.com/wallpaper/527/29/HD-wallpaper-shaikh-mohammed-bin-zayed-shaikh-mohammed.jpg",
+    "namePerson": "Mohamed bin Zayed",
+    "precie": "5 billetes",
+    "hashtags": "#temple #egypt #ancient #travel",
+    "likes": "0",
+    "duration": "4 hs",
+    "activitys": [
+      {
+        "nameActivity": "Royal Jewelry Museum",
+        "imageActivity": "https://upload.wikimedia.org/wikipedia/commons/f/f6/AlexRoyalJewelleryMusLeft.jpg"
+      },
+
+      {
+        "nameActivity": "Alexandria National Museum",
+        "imageActivity": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/GD-EG-Alex-Mus%C3%A9eNat040.JPG/1200px-GD-EG-Alex-Mus%C3%A9eNat040.JPG"
+      },
+
+      {
+        "nameActivity": "Alexandria Lighthouse",
+        "imageActivity": "https://thumbs.dreamstime.com/b/view-lighthouse-alexandria-egypt-27266527.jpg"
+      }
+    ]
+  },
+
+  {
+    "nameItineraty": "Pass to Alejandria",
+    "imagePerson": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Mohammed_bin_Rashid_Al_Maktoum_%2815-02-2021%29.jpg",
+    "namePerson": "Mohammed bin Rashid Al Maktoum",
+    "precie": "5 billetes",
+    "hashtags": "#temple #fort #ancient #travel",
+    "likes": "0",
+    "duration": "4 hs",
+    "activitys": [
+      {
+        "nameActivity": "Corniche",
+        "imageActivity": "https://planetofhotels.com/guide/sites/default/files/styles/paragraph__hero_banner__hb_image__1880bp/public/hero_banner/La_Corniche_promenade.jpg"
+      },
+
+      {
+        "nameActivity": "Ancient Roman Amphitheater",
+        "imageActivity": "https://traveltoegypt.net/front/images/blog/The-Roman-amphitheatre.jpg"
+      },
+
+      {
+        "nameActivity": "Fort Qaitbey",
+        "imageActivity": "https://planetofhotels.com/guide/sites/default/files/styles/paragraph__hero_banner__hb_image__1880bp/public/hero_banner/Citadel_of_Qaitbay.jpg"
+      }
+    ]
+  },
+  /*Port Said*/
+
+  {
+    "nameItineraty": " Dreamer Port",
+    "imagePerson": "https://atalayar.com/sites/default/files/styles/foto_/public/noticias/presidente-al-sisi-egipto.jpg?itok=m5HYxaMR",
+    "namePerson": "Abdelfatah El-Sisi",
+    "precie": "5 billetes",
+    "hashtags": "#river #egypt #travel",
+    "likes": "0",
+    "duration": "3 hs",
+    "activitys": [
+      {
+        "nameActivity": "Port Said Military Museum",
+        "imageActivity": "https://ask-aladdin.com/images/museums/portsaid5.jpg"
+      },
+
+      {
+        "nameActivity": "The Nasr Museum For Modern Art",
+        "imageActivity": "https://www.egypttoday.com/siteimages/Larg/202008100318391839.jpg"
+      },
+
+      {
+        "nameActivity": "Best of Egypt Shore Excursions",
+        "imageActivity": "https://media-cdn.tripadvisor.com/media/photo-s/03/79/c5/70/best-of-egypt-shore-excursions.jpg"
+      }
+    ]
+  },
+
+  {
+    "nameItineraty": " Egypt Shore Excursions",
+    "imagePerson": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScK9KjH2uyOEeX1XPRV3-t-uOYv5VN3RlTORAONSeQ6Er3AK_qXyWHlDaxMOHGLX6Tkig&usqp=CAU",
+    "namePerson": "Mohamed Badie",
+    "precie": "5 billetes",
+    "hashtags": "#temple #egypt #ancient #tours",
+    "likes": "0",
+    "duration": "4 hs",
+    "activitys": [
+      {
+        "nameActivity": "Emo Tours Egypt",
+        "imageActivity": "https://d3rr2gvhjw0wwy.cloudfront.net/uploads/activity_galleries/305749/2000x2000-0-70-2c768a9d8ed4d2c0d1f41f9c5c54c970.jpg"
+      },
+
+      {
+        "nameActivity": "Nile Blue Excursions",
+        "imageActivity": "http://www.nilebluetours.com/wp-content/uploads/2016/01/cairo-pyramids-giza-tours.jpg"
+      },
+
+      {
+        "nameActivity": "Golden Egypt Tours - Day Tours",
+        "imageActivity": "https://goldenegypttours.com/wp-content/uploads/2012/12/pyr-from-air.jpg"
+      }
+    ]
+  },
+
+  {
+    "nameItineraty": "Egypt past",
+    "imagePerson": "https://s03.s3c.es/imag/_v0/630x473/7/8/a/embajador_egipto_3.jpg",
+    "namePerson": "Ayman Zein El Dein",
+    "precie": "2 billetes",
+    "hashtags": "#temple #egypt #ancient #travel",
+    "likes": "0",
+    "duration": "4 hs",
+    "activitys": [
+      {
+        "nameActivity": "Egypt Excursions Online Port Said",
+        "imageActivity": "https://media-cdn.tripadvisor.com/media/photo-s/07/1d/c8/17/egypt-excursions-online.jpg"
+      },
+
+      {
+        "nameActivity": "Ramasside Tours",
+        "imageActivity": "https://media-cdn.tripadvisor.com/media/photo-m/1280/21/40/e7/8d/ramasside-tours.jpg"
+      },
+
+      {
+        "nameActivity": "Suez Canal",
+        "imageActivity": "https://www.fundacionaquae.org/wp-content/uploads/2021/04/canal-de-suez-1024x526.jpg.webp"
+      }
+    ]
+  },
+                /*Suez*/
+  {
+    "nameItineraty": " Essential Suez",
+    "imagePerson": "https://timep.org/wp-content/uploads/2014/07/Tantawi-e1456813735384.png",
+    "namePerson": "Mohammed Hussein Tantawi ",
+    "precie": "5 billetes",
+    "hashtags": "#river #egypt #travel",
+    "likes": "0",
+    "duration": "3 hs",
+    "activitys": [
+      {
+        "nameActivity": "Warm Spa Sokhna",
+        "imageActivity": "https://media-cdn.tripadvisor.com/media/photo-s/1d/43/1b/66/jacuzzi.jpg"
+      },
+
+      {
+        "nameActivity": "The Kite Buzz",
+        "imageActivity": "https://media-cdn.tripadvisor.com/media/photo-s/16/ce/22/3c/the-kite-buzz-kitesurfing.jpg"
+      },
+
+      {
+        "nameActivity": "Fin & Dagger - Ras Sudr",
+        "imageActivity": "https://ak-d.tripcdn.com/images/200u190000015w3inCAE6_D_310_200_R5_Q20.jpg"
+      }
+    ]
+  },
+
+                /*Tanta*/
+  {
+    "nameItineraty": " Tanta",
+    "imagePerson": "https://i1.rgstatic.net/ii/profile.image/278505351860224-1443412258367_Q512/Ahmad-Al-Badawi.jpg",
+    "namePerson": "Ahmad al-Badawi ",
+    "precie": "5 billetes",
+    "hashtags": "#river #egypt  #tour #travel",
+    "likes": "0",
+    "duration": "4 hs",
+    "activitys": [
+      {
+        "nameActivity": "Wiiwii's Farm",
+        "imageActivity": "https://www.ootlah.com/wp-content/uploads/2021/02/680px-420px-133029092_1889751574513378_2426390883220461658_o.jpg"
+      },
+
+      {
+        "nameActivity": "Anton's Egypt Tours",
+        "imageActivity": "https://images.squarespace-cdn.com/content/v1/5cb46fa2b914497d1bb8b39c/1594669314483-SFQ0RB96ZY2KE59VN6EB/Abu+simbel+temple+.JPG?format=2500w"
+      },
+
+      {
+        "nameActivity": "Blue River",
+        "imageActivity": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/ET_Bahir_Dar_asv2018-02_img32_view_from_Bezawit.jpg/800px-ET_Bahir_Dar_asv2018-02_img32_view_from_Bezawit.jpg"
+      }
+    ]
+  },
+
+/*al-Khusus*/
+
+  {
+    "nameItineraty": " Tanta",
+    "imagePerson": "https://www.biografiasyvidas.com/biografia/n/fotos/nasser_2.jpg",
+    "namePerson": "Gamal Abdel Nasser ",
+    "precie": "5 billetes",
+    "hashtags": "#river #egypt  #tour #travel",
+    "likes": "0",
+    "duration": "4 hs",
+    "activitys": [
+      {
+        "nameActivity": "Le Quell Elite",
+        "imageActivity": "https://media-cdn.tripadvisor.com/media/photo-m/1280/1c/10/3b/71/le-quell-elite-where.jpg"
+      },
+
+      {
+        "nameActivity": "Egypt Pyramids Tours-Private Tours",
+        "imageActivity": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/21/50/00/51/caption.jpg?w=800&h=800&s=1"
+      },
+
+      {
+        "nameActivity": "Emad Mamdouh - Tour Guide",
+        "imageActivity": "https://media-cdn.tripadvisor.com/media/photo-s/10/cc/28/1e/received-10155827283662376.jpg"
+      }
+    ]
+  }
+
+
+
+]

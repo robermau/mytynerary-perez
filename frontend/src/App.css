@@ -396,3 +396,10 @@ font-size:.8rem;
  justify-content:space-around;
  
 }
+
+.svg-like {
+  display:flex;
+  flex-direction:row;
+  justify-content:center;
+ margin:0;
+}
