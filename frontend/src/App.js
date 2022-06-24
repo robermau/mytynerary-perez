@@ -8,12 +8,23 @@ import Cities from './pages/cities';
 import { ArrowCircleUpIcon } from '@heroicons/react/solid';
 import ScrollToTop from "react-scroll-to-top";
 import Details from './components/Details';
+import {useDispatch} from 'react-redux';
+import { useEffect } from "react";
+import citiesActions from './actions/citiesActions';
+
+
 
 
 
 
 
 function App() {
+
+const dispatch = useDispatch() 
+useEffect(() => {
+  dispatch (citiesActions.getCities()) 
+// eslint-disable-next-line
+},[])
 
   return (
     

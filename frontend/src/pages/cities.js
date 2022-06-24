@@ -1,8 +1,12 @@
 import Cards from "../components/Cards";
 import "../index.css";
 import React, { useEffect, useState } from "react";
-// import data from '../data.json';
-import axios from 'axios';
+
+import {useSelector , useDispatch } from 'react-redux';
+import citiesActions from "../actions/citiesActions";
+
+
+
 
 
 
@@ -10,26 +14,22 @@ import axios from 'axios';
 export default function Cities() {
 
 
-
-   const [city, setCity] = useState([])
+ 
    const [search, setSearch] = useState('')
-   const [results,setResults] = useState(city)
+   const dispatch = useDispatch()
 
+useEffect (()=> {
 
+   dispatch(citiesActions.filterCities(search))
+// eslint-disable-next-line
+},[setSearch]);
+
+const cityFilter = useSelector(store => store.citiesReducers.filter)
   
 
+    let citySearch = cityFilter.filter(city => city.name.toLowerCase().startsWith(search.trim().toLowerCase()))
+
   
-   useEffect(() => {
-      
-      axios.get("http://localhost:4000/api/cities")
-      
-      .then(response => setCity(response.data.response.cities))
-   
-       let citySearch = city.filter(city => city.name.toLowerCase().startsWith(search.trim().toLowerCase()))
-      
-      setResults(citySearch)
-   }, [search,city])
-   
 return (
 
      <div className=" gap-y-8 backgroundError">
@@ -79,7 +79,7 @@ return (
          </form>
          <div className="justify-center cardContainer">
 
-            {results.length > 0 ? results.map(city => <Cards city={city} key={city._id} />) : <h1>not Found Results</h1>}
+            {citySearch.length > 0 ? citySearch.map(city => <Cards city={city} key={city._id} />) : <h1>not Found Results</h1>}
 
          </div>
 

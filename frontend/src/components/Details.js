@@ -1,10 +1,14 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import '../index.css';
-import axios from 'axios';
-import { useState, useEffect } from 'react';
+// import axios from 'axios';
+import {useEffect } from 'react';
 import { Link as LinkRouter } from 'react-router-dom';
 import Itineraries from '../components/Itineraries';
+import { useDispatch,useSelector  } from 'react-redux';
+import citiesActions from '../actions/citiesActions';
+import itinerariesActions from '../actions/itinerariesActions.js';
+
 
 
 
@@ -21,18 +25,26 @@ function classNames(...classes) {
 export default function Details() {
 
     const { id } = useParams()
-    const [city, setCity] = useState({})
-
+    console.log(id)
+    // const [city, setCity] = useState({})
+    const dispatch = useDispatch();
     useEffect(() => {
 
-        axios.get(`http://localhost:4000/api/cities/${id}`)
-            .then(response => setCity(response.data.response))
-
-    }, [])
+        dispatch(citiesActions.getOneCity(id))
+        dispatch(itinerariesActions.findItinerariesFromCity(id))
+       
+// eslint-disable-next-line
+    }, [id])
+  const city =useSelector (store => store.citiesReducers.oneCity)
+  const itineraries= useSelector(store=>store.itinerariesReducer.getItinerariesFromCity)
+ console.log(itineraries)
 
     return (
-        <div className='mainCardContainer detailsContainer'>
-            <div className="container">
+        <div className='mainCardContainer'>
+       
+      { itineraries?.length > 0 ? <Itineraries data ={itineraries} /> : <h1 className='font-activity'>Dont found Itineraries </h1> }
+            
+            {/* <div className="container">
                 <div className="front side">
                     <div className="content">
                         <h1 >{city.name}</h1>
@@ -55,8 +67,9 @@ export default function Details() {
 
                 </div>
                
-            </div>
-            <Itineraries />
+            </div> */}
+   
+            
         </div>
         
     )

@@ -1,59 +1,81 @@
 import { BsHandThumbsUp } from "react-icons/bs"
-export default function Itineraries() {
+import * as React from 'react';
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import Typography from '@mui/material/Typography';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+
+export default function Itineraries({data}) {
+
+console.log(data)
+
   return (
-
-
-
-    <div className="  rounded-3xl ml-5 bg flex flex-col items-center  justify-between mt-8 h-2/4 bg-white">
-      <div className="lg:text-center">
-        <h2 className=" text-5xl">Itineraries</h2>
+    <>
+    {
+     data.map(e =>    
+     
+    <div key={e._id}  className="container-itinerary  radius  bg-white">
+      <div className="text-center w-full rounded-3xl   ">
+        <h2 className="itinerary  text-5xl">{e.nameItinerary}</h2>
       </div>
-      <div className=" flex flex-col items-center">
+      <div className=" rounded-3xl flex flex-col items-center">
         <img
           className="h-30 w-24 rounded-full ring-2 ring-white"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRuv8k4ViSE-Da_vwSHCMtwp4-goHZyKhe6K1yqr9mzoKrvfyQCCcMP1k4UjfYfp0UzYg&usqp=CAU"
+          src={e.imagePerson}
           alt=""
         />
       </div>
+      {e.namePerson}
 
-      <div className="max-w-2xl  px-4 sm:px-6 lg:px-8">
 
-        <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-          Mohamed Salah
-        </p>
+      <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+      
+      </p>
 
-        <p className=" max-w-2xl text-xl text-gray-900 lg:mx-auto"> Price:$2</p>
+      <p className=" max-w-2xl text-xl text-gray-900 lg:mx-auto"> Price:{e.precie}</p>
 
-        <p className=" max-w-2xl text-xl text-gray-900 lg:mx-auto">Duration: 2hs</p>
-        <div className="svg-like">
-          <BsHandThumbsUp />
-        </div>
-        <p className="mt-1 max-w-2xl text-xl text-gray-900 lg:mx-auto">
-
-          Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam voluptatum cupiditate veritatis in
-          accusamus quisquam.
-        </p>
-
+      <p className=" max-w-2xl text-xl text-gray-900 lg:mx-auto">Duration:{e.duration}</p>
+      <div className="svg-like">
+    <BsHandThumbsUp />
+        {e.likes}
       </div>
+      <p className="mt-1 max-w-2xl text-xl text-gray-900 lg:mx-auto">
+           {e.hashtags}
+      </p>
 
-      <button id="dropdownDefault" data-dropdown-toggle="dropdown" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center  items-center w-80 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Dropdown button <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"></svg></button>
-
-      <div id="dropdown" className="z-10 hidden bg-white divide-y divide-gray-100 rounded shadow w-44 dark:bg-gray-700">
-
-        <ul className="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefault">
-          <li>
-            <a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
-          </li>
-          <li>
-            <a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
-          </li>
-          <li>
-            <a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
-          </li>
-        </ul>
-      </div>
-
+      <Accordion>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1a-content"
+          id="panel1a-header"
+        >
+         <p className="font-activity container-activity">More Info</p>
+        </AccordionSummary>
+        <AccordionDetails >
+         
+            {e.activitys.map ((activity,index) => 
+              (
+              <div className="activitys" key={index}> <div className="container-activity"> <p className="font-activity">{activity.nameActivity}</p> <img className="image-activity" src={activity.imageActivity} /></div></div>
+              ) 
+                
+              
+              )}
+          
+         
+        </AccordionDetails>
+      </Accordion>
     </div>
+    
+) 
+
+}
+</>
+
+
+
+
+
 
 
   )

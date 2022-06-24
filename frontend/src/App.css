@@ -17,28 +17,33 @@
 .main {
   display: flex;
   flex-direction: column;
-  align-items:center;
+  align-items: center;
   background-image: url("https://ampascachi.com/images/evergreen/africa/egipto/banner-egipto.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  
 }
 
-.sencond-banner, .mainCardContainer {
+.sencond-banner {
   background-image: url("https://imge.cloud/images/2022/06/08/rV3Akf.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   display: flex;
   flex-direction: column;
- align-items:center;
+  align-items: center;
   justify-content: space-evenly;
-  height:100vh;
- 
-  
+}
 
-  
-  
+.mainCardContainer {
+  background-image: url("https://imge.cloud/images/2022/06/08/rV3Akf.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+ flex-direction:column;
+  align-items: center;
+  justify-content: center;
+  min-height :100vh;
 }
 
 h1,
@@ -70,9 +75,6 @@ h3 {
   text-shadow: 0 1px 7px black, 0 0 7px white, 0px 0px 7px white;
 }
 
-
-
-
 .logo {
   width: 30rem;
 
@@ -87,9 +89,9 @@ h3 {
   color: black;
   background-color: black;
   margin-top: 1rem;
-  padding:1rem;
+  padding: 1rem;
   text-shadow: 0 0 10px white, 0 0 10px white, 0px 0px 10px white;
-  border-radius:5rem;
+  border-radius: 5rem;
 }
 
 .textMain {
@@ -100,15 +102,13 @@ h3 {
   width: 90%;
 }
 
-
-
 .carrousel {
   width: 90%;
   margin-bottom: 1rem;
   background-color: white;
   padding-top: 2rem;
   background-color: black;
-  margin-top:1rem;
+  margin-top: 1rem;
 }
 
 footer {
@@ -120,10 +120,10 @@ footer {
 }
 .imgCarrousel {
   height: 15rem;
-  object-fit:cover;
+  object-fit: cover;
 }
 
-.fontCarrousel  {
+.fontCarrousel {
   font-size: 1.3rem;
   font-weight: bold;
   color: white;
@@ -161,19 +161,17 @@ footer {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-   width:100%;
+  width: 100%;
   align-items: center;
   background-attachment: fixed;
-  flex-grow:1;
- 
-  
+  flex-grow: 1;
 }
 
 .cardContainer {
   display: flex;
-  flex-direction:row;
-  flex-wrap:wrap;
- }
+  flex-direction: row;
+  flex-wrap: wrap;
+}
 
 .img-card {
   height: 15rem;
@@ -185,10 +183,8 @@ footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color:#853500;
-  padding-left:1rem;
-
-  
+  background-color: #853500;
+  padding-left: 1rem;
 }
 
 .Carrousel-box {
@@ -197,10 +193,6 @@ footer {
   align-items: center;
   width: auto;
 }
-
-
-
-
 
 @media (max-width: 800px) {
   h3 {
@@ -248,25 +240,21 @@ footer {
   border-radius: 50%;
   color: white;
   background-color: #853500;
-} 
+}
 
-@media(max-width: 390px){
-.cardContainer {
- margin-left:.8rem;
-  justify-content:center;
-width:18rem;
-  
- }
+@media (max-width: 390px) {
+  .cardContainer {
+    margin-left: 0.8rem;
+    justify-content: center;
+    width: 18rem;
+  }
 }
 
 .video-docker video {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width:100vw;
-
-  
-  
+  width: 100vw;
 }
 .video-docker::after {
   content: "";
@@ -277,14 +265,11 @@ width:18rem;
   z-index: 1;
 }
 
-
 .video-content {
   z-index: 2;
-  
 }
 
-
-.container {
+/* .container {
   margin-left:2rem;
  margin-top:2rem;
   height:82vh;
@@ -338,15 +323,14 @@ width:18rem;
   width: 50%;
   background-color:#853500;
   border-radius: 5rem;
-  width:100%;
-  height:30rem;
+ height:30rem;
   display:flex;
   justify-content:center;
   box-shadow: 0 0 10px white, 0 0 10px white, 0px 0px 10px white;
 }
 .back {
   transform: rotateY(180deg);
-  width:100%;
+ 
   display:flex;
   flex-direction:column;
   z-index: 0;
@@ -377,29 +361,83 @@ width:18rem;
   line-height: 2rem;
 font-size:.8rem;
 }
-}
+} */
 
-.btn-back{
-
- background-color:black;
- border-radius:1rem;
- width:15rem;
-
+.btn-back {
+  background-color: black;
+  border-radius: 1rem;
+  width: 15rem;
 }
 
 .detailsContainer {
-
   display: flex;
   flex-direction: row;
-  justify-content:center;
- align-items: flex-start;
- justify-content:space-around;
- 
+  justify-content: center;
+  align-items: flex-start;
+  justify-content: space-around;
 }
 
 .svg-like {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0;
+}
+
+.MuiPaper-root {
+  border-radius: 0 0 3rem 3rem !important;
+}
+.itinerary {
+  border-radius: 3rem 3rem 0 0;
+  background-color: #853500;
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.radius {
+  border-radius: 3rem 3rem 3rem 3rem;
+  box-shadow: 0 0 20px black, 0 0 20px black, 0px 0px 20px black;
+}
+
+.container-itinerary {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+
+  
+ 
+}
+.container-activity{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+
+}
+.activitys{
   display:flex;
   flex-direction:row;
   justify-content:center;
- margin:0;
+}
+
+.image-activity {
+  width:30rem;
+  height:20rem;
+  object-fit:cover;
+ 
+}
+.font-activity {
+  font-weight:bold;
+  font-size:2rem;
+  text-align:center;
+}
+
+.css-o4b71y-MuiAccordionSummary-content{
+  display:flex;
+  justify-content:center!important;
+}
+
+@media (max-width: 612px) {
+  .itinerary  {
+  font-size: 2rem;
+  }
 }

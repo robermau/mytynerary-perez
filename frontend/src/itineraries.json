@@ -1,10 +1,10 @@
 [
   {
-    /*EL CAIRO*/ 
-    "nameItineraty": " Cairo, travel as begin",
+  
+    "nameItinerary": " Cairo, travel as begin",
     "imagePerson": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRuv8k4ViSE-Da_vwSHCMtwp4-goHZyKhe6K1yqr9mzoKrvfyQCCcMP1k4UjfYfp0UzYg&usqp=CAU",
     "namePerson": "Mohamed Salah",
-    "precie": "5 billetes",
+    "precie": "💵💵💵💵💵",
     "hashtags": "#river #egypt #travel",
     "likes": "0",
     "duration": "3 hs",
@@ -27,10 +27,10 @@
   },
 
   {
-    "nameItineraty": "Things to Do",
+    "nameItinerary": "Things to Do",
     "imagePerson": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Nasser_Ghanem_Al_Kholaifi_%28crop%29.jpg/240px-Nasser_Ghanem_Al_Kholaifi_%28crop%29.jpg",
     "namePerson": "Nasser Al-Khelaïfi",
-    "precie": "5 billetes",
+    "precie": "💵💵💵💵💵",
     "hashtags": "#temple #egypt #ancient #travel",
     "likes": "0",
     "duration": "4 hs",
@@ -53,10 +53,10 @@
   },
 
   {
-    "nameItineraty": "Egypt past",
+    "nameItinerary": "Egypt past",
     "imagePerson": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Mohammed_bin_Rashid_Al_Maktoum_%2815-02-2021%29.jpg",
     "namePerson": "Mohammed bin Rashid Al Maktoum",
-    "precie": "2 billetes",
+    "precie": "💵💵",
     "hashtags": "#temple #egypt #ancient #travel",
     "likes": "0",
     "duration": "4 hs",
@@ -76,14 +76,14 @@
         "imageActivity": "https://media.tacdn.com/media/attractions-splice-spp-674x446/0b/ee/16/da.jpg"
       }
     ]
-    /*Alejandria*/
+   
   },
 
   {
-    "nameItineraty": " Alejandria , sweet dreams",
+    "nameItinerary": " Alejandria , sweet dreams",
     "imagePerson": "https://www.sis.gov.eg/Content/Upload/slider/1202020135455121.jpg",
     "namePerson": "Ahmad Al-Tayeb",
-    "precie": "5 billetes",
+    "precie": "💵💵💵💵",
     "hashtags": "#library #egypt #travel #tombs",
     "likes": "0",
     "duration": "2 hs",
@@ -106,10 +106,10 @@
   },
 
   {
-    "nameItineraty": "Egypt culture",
+    "nameItinerary": "Egypt culture",
     "imagePerson": "https://w0.peakpx.com/wallpaper/527/29/HD-wallpaper-shaikh-mohammed-bin-zayed-shaikh-mohammed.jpg",
     "namePerson": "Mohamed bin Zayed",
-    "precie": "5 billetes",
+    "precie": "💵💵💵",
     "hashtags": "#temple #egypt #ancient #travel",
     "likes": "0",
     "duration": "4 hs",
@@ -132,10 +132,10 @@
   },
 
   {
-    "nameItineraty": "Pass to Alejandria",
+    "nameItinerary": "Pass to Alejandria",
     "imagePerson": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Mohammed_bin_Rashid_Al_Maktoum_%2815-02-2021%29.jpg",
     "namePerson": "Mohammed bin Rashid Al Maktoum",
-    "precie": "5 billetes",
+    "precie": "💵💵💵💵💵",
     "hashtags": "#temple #fort #ancient #travel",
     "likes": "0",
     "duration": "4 hs",
@@ -156,13 +156,13 @@
       }
     ]
   },
-  /*Port Said*/
+ 
 
   {
-    "nameItineraty": " Dreamer Port",
+    "nameItinerary": " Dreamer Port",
     "imagePerson": "https://atalayar.com/sites/default/files/styles/foto_/public/noticias/presidente-al-sisi-egipto.jpg?itok=m5HYxaMR",
     "namePerson": "Abdelfatah El-Sisi",
-    "precie": "5 billetes",
+    "precie": "💵💵💵💵💵",
     "hashtags": "#river #egypt #travel",
     "likes": "0",
     "duration": "3 hs",
@@ -185,10 +185,10 @@
   },
 
   {
-    "nameItineraty": " Egypt Shore Excursions",
+    "nameItinerary": " Egypt Shore Excursions",
     "imagePerson": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScK9KjH2uyOEeX1XPRV3-t-uOYv5VN3RlTORAONSeQ6Er3AK_qXyWHlDaxMOHGLX6Tkig&usqp=CAU",
     "namePerson": "Mohamed Badie",
-    "precie": "5 billetes",
+    "precie": "💵💵💵",
     "hashtags": "#temple #egypt #ancient #tours",
     "likes": "0",
     "duration": "4 hs",
@@ -211,10 +211,10 @@
   },
 
   {
-    "nameItineraty": "Egypt past",
+    "nameItinerary": "Egypt past",
     "imagePerson": "https://s03.s3c.es/imag/_v0/630x473/7/8/a/embajador_egipto_3.jpg",
     "namePerson": "Ayman Zein El Dein",
-    "precie": "2 billetes",
+    "precie": "💵💵",
     "hashtags": "#temple #egypt #ancient #travel",
     "likes": "0",
     "duration": "4 hs",
@@ -235,12 +235,12 @@
       }
     ]
   },
-                /*Suez*/
+             
   {
-    "nameItineraty": " Essential Suez",
+    "nameItinerary": " Essential Suez",
     "imagePerson": "https://timep.org/wp-content/uploads/2014/07/Tantawi-e1456813735384.png",
     "namePerson": "Mohammed Hussein Tantawi ",
-    "precie": "5 billetes",
+    "precie": "💵",
     "hashtags": "#river #egypt #travel",
     "likes": "0",
     "duration": "3 hs",
@@ -262,12 +262,12 @@
     ]
   },
 
-                /*Tanta*/
+              
   {
-    "nameItineraty": " Tanta",
+    "nameItinerary": " Tanta",
     "imagePerson": "https://i1.rgstatic.net/ii/profile.image/278505351860224-1443412258367_Q512/Ahmad-Al-Badawi.jpg",
     "namePerson": "Ahmad al-Badawi ",
-    "precie": "5 billetes",
+    "precie": "💵",
     "hashtags": "#river #egypt  #tour #travel",
     "likes": "0",
     "duration": "4 hs",
@@ -289,13 +289,13 @@
     ]
   },
 
-/*al-Khusus*/
+
 
   {
-    "nameItineraty": " Tanta",
+    "nameItinerary": " Tanta",
     "imagePerson": "https://www.biografiasyvidas.com/biografia/n/fotos/nasser_2.jpg",
     "namePerson": "Gamal Abdel Nasser ",
-    "precie": "5 billetes",
+    "precie": "💵💵💵",
     "hashtags": "#river #egypt  #tour #travel",
     "likes": "0",
     "duration": "4 hs",
