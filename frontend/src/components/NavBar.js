@@ -11,6 +11,12 @@ const navigation = [
   ,
 ];
 
+ const register = [
+  { name: "Sign In", to: "/SignIn"},
+  { name: "Sign Up", to: "/SignUp" }
+ ];
+
+
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
@@ -54,33 +60,25 @@ export default function Navbar() {
               leaveFrom="transform opacity-100 scale-100"
               leaveTo="transform opacity-0 scale-95">
 
-              <Menu.Items className="absolute right-0 w-48 mt-2 origin-top-right bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                
-                <Menu.Item>
-                  {({ active }) => (
-                    <a href="#" className={classNames(
-                      active ? "bg-gray-100" : "", "block px-4 py-2 text-sm text-gray-700")}>
-                      Your Profile </a>
-                  )}
-                </Menu.Item>
-                <Menu.Item>
-                  {({ active }) => (
-                    <a href="#" className={classNames(
-                      active ? "bg-gray-100" : "", "block px-4 py-2 text-sm text-gray-700")}>
-                      LogOut
-                    </a>)}
-
-                </Menu.Item>
-                <Menu.Item>
-                  {({ active }) => (
-                    <a href="#" className={classNames(
-                      active ? "bg-gray-100" : "",
-                      "block px-4 py-2 text-sm text-gray-700")}>
-                      Sign out</a>)}
-                </Menu.Item>
-              </Menu.Items>
-            </Transition>
-          </Menu>
+   <Menu.Items className="absolute right-0 w-48 mt-2 origin-top-right bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+        <Menu.Item >
+           {({ active }) => (
+           <LinkRouter to="/SignIn">
+              <a className={classNames(
+                active ? "bg-gray-100" : "", "block px-4 py-2 text-sm text-gray-700")}>
+                Sign In
+               </a> </LinkRouter>)}
+                  </Menu.Item>
+        <Menu.Item>
+            {({ active }) => (
+            <LinkRouter to="/SignUp">
+              <a className={classNames(
+              active ? "bg-gray-100" : "", "block px-4 py-2 text-sm text-gray-700")}>
+              Sign Up</a> </LinkRouter>)}
+                </Menu.Item> 
+   </Menu.Items>
+</Transition>
+  </Menu>
     
 
 

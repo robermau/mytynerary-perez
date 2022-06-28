@@ -12,10 +12,10 @@ const initialState = {
 
 const citiesReducer = (state = initialState, action) => {
 
-    switch (action.type) {
+    switch (action.type) {  //el switch en los reductores es para avisar al reductor que action tiene q tomar y que estado tiene q cargar
         case "GET_CITIES":
             return {
-                ...state,
+                ...state,  // este state  vas a cambiar el estado inicial y le vas a pasar action.payload
                 cities: action.payload,
                 auxiliar: action.payload,
                 filter:action.payload        // Cargo todas las ciudades

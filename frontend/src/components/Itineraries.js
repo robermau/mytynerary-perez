@@ -55,8 +55,12 @@ console.log(data)
         <AccordionDetails >
          
             {e.activitys.map ((activity,index) => 
-              (
-              <div className="activitys" key={index}> <div className="container-activity"> <p className="font-activity">{activity.nameActivity}</p> <img className="image-activity" src={activity.imageActivity} /></div></div>
+              (<div className="activitys" key={index}> 
+                  <div className="container-activity"> 
+                       <p className="font-activity">{activity.nameActivity}</p> 
+                          <img className="image-activity" src={activity.imageActivity} />
+                          </div>
+                            </div>
               ) 
                 
               

@@ -11,6 +11,8 @@ import Details from './components/Details';
 import {useDispatch} from 'react-redux';
 import { useEffect } from "react";
 import citiesActions from './actions/citiesActions';
+import SingIn from "./components/SingIn"
+import SignUp from "./components/SignUp"
 
 
 
@@ -34,6 +36,8 @@ useEffect(() => {
         <Route path="/"element={<Index/>}/>
         <Route path="/cities"element={<Cities/>}/>
         <Route path="/city/:id"element={<Details/>}/>
+        <Route path="/signin"element={<SingIn/>}/>
+        <Route path="/signup"element={<SignUp/>}/>
          </Routes> 
 
          <ScrollToTop className="absolute w-12 h-12 text-black -z-1 right-2" 
