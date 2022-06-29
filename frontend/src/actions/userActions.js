@@ -1,0 +1,26 @@
+import axios from 'axios';
+
+const userActions = {
+    signUpUsers: (userData) => {
+        return async (dispatch, getState) => {
+            const res = await axios.post('http://localhost:4000/api/signup', {userData})
+            
+            console.log(res)
+             dispatch ({type: 'GET_USER', payload:{message:res.data.message,success:res.data.success} })
+        }
+    },
+
+
+        logInUser: (logedUser) => {
+            return async (dispatch, getState) => {
+                const res = await axios.post('http://localhost:4000/api/signin', {logedUser})
+                console.log(res)
+                dispatch ({type: 'GET_SIGN', payload:{message:res.data.message,success:res.data.success} })
+                
+            }
+           
+        }
+
+    
+}
+export default userActions

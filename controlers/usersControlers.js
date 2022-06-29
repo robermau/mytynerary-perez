@@ -1,15 +1,16 @@
-const User = require('../models/user')
+const user = require('../models/user')
+const bcryptjs = require('bcryptjs')
 
 
 const usersControllers = {
 
     signUpUsers: async (req, res) => {
-        let(firstName, LastName, email, password, from) = req.body.userData
+        const{firstName, lastName,imageUser, email, password, from,country,city,streetAdress,state,zipcode} = req.body.userData 
 
 
         try {
-            const userExist = await User.findOne({ email })
-            if (userExist) {
+            const userExist = await user.findOne({ email })
+            if (userExist && userExist.lenght > 0) {
                 if (userExist.from.indexOf(from) !== -1) {
                     res.json({
 
@@ -21,32 +22,38 @@ const usersControllers = {
                     })
                 } else {
 
-                    const passwordHashed = bcrypyjs.hashSync(password, 10)
+                    const passwordHashed = bcryptjs.hashSync(password, 10)
                     userExist.from.push(from)
                     userExist.password.push(passwordHashed)
                     res.json({
                         success: true,
                         from: 'signup',
-                        message: " We add" + from + "to your means to sign in"
+                        message: " We add" + " " + from + " " + "to your means to sign in"
                     })
                 }
             } else {
 
-                const passwordHashed = bcrypyjs.hashSync(password, 10)
-                const newUser = await new User({
-                    firstName,
-                    lastName,
-                    email,
-                    password: [passwordHashed],
+                const passwordHashed =  bcryptjs.hashSync(password, 10)
+                const newUser = await new user({
+                    firstName: firstName,  
+                    lastName:lastName,
+                    imageUser:imageUser,
+                    streetAdress:streetAdress,
+                    city:city,
+                    state:state,
+                    zipcode:zipcode,
+                    email:email,
+                    password: passwordHashed,
                     verifiedEmail: false,
-                    from: [from]
+                    from: [from],
+                    country:country
                 })
                 if (from !== 'form-Signup') {
                     await newUser.save()
                     res.json({
                         success: true,
                         from: "signup",
-                        message: "Congrats your user was created " + from
+                        message: "Congrats your user was created " + " " + from
                     })
 
                 } else {
@@ -61,6 +68,7 @@ const usersControllers = {
             }
         } catch (error) {
             res.json({
+                 console : console.log(error),
                 success: false,
                 message: " Anything is wrong, try in a few min"
 
@@ -72,20 +80,21 @@ const usersControllers = {
         const { email, password, from } = req.body.logedUser
         try {
 
-            const userExist = await User.findOne({ email })
-            const indexPass = userExist.from.indexOf(from)
+            const userExist = await user.findOne({ email })
+            // const indexPass = userExist.from.indexOf(from)
             if (!userExist) {
                 res.json({ success: false, message: "Your user  not been registered, please sign in " })
             } else {
                 if (from !== "form-signUp") {
-                    let passwordMatch = userExist.password.filter(pass => bcrypt.compareSync(password, pass))
+                    let passwordMatch = userExist.password.filter(pass => bcryptjs.compareSync(password, pass))
                     if (passwordMatch.length > 0) {
 
                         const userData = {
 
                             id: userExist._id,
-                            firstName: userExist.firstName,
-                            lastName: userExist.lastName,
+                            firstName:userExist.firstName,
+                            lastName:userExist.lastName,
+                           password: userExist.passwordHashed,
                             email: userExist.email,
                             from: from,
                         }
@@ -95,7 +104,7 @@ const usersControllers = {
                                 success: true,
                                 from: from,
                                 response: { userData },
-                                message: "Wellcome" + userData.firstName + userData.lastName
+                                message: "Wellcome" + "  " + userData.firstName + " " + userData.lastName
 
 
                             })
@@ -105,13 +114,14 @@ const usersControllers = {
                         res.json({
                             success: false,
                             from: from,
-                            message: "You did not registered with " + from + "if you want to enter with this method please sign up" + from
+                            message: "You did not registered with " + " " + from + " " + "if you want to enter with this method please sign up" + " " + from
 
 
                         })
                     }
 
                 } else {
+                    let passwordMatch = userExist.password.filter(pass => bcryptjs.compareSync(password, pass))
                     if (passwordMatch.lenght > 0) {
                         const userData = {
                             id: userExist._id,
@@ -126,8 +136,8 @@ const usersControllers = {
                         res.json({
                             success: true,
                             from: from,
-                            response: { token, userData },
-                            message: "Wellcome again" + userData.firstName + userData.lastName,
+                            response: {  userData },
+                            message: "Wellcome again" + " " + logedUser.firstName + " " + logedUser.lastName,
                         })
 
                     } else {
