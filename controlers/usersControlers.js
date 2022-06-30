@@ -94,7 +94,7 @@ const usersControllers = {
                             id: userExist._id,
                             firstName:userExist.firstName,
                             lastName:userExist.lastName,
-                           password: userExist.passwordHashed,
+                            password: userExist.passwordHashed,
                             email: userExist.email,
                             from: from,
                         }

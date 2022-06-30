@@ -463,6 +463,7 @@ align-items:center;
 .label {
 font-weight:bold;
 font-size:1.5rem;
+
 }
 
 .display-form{
@@ -473,9 +474,17 @@ margin-top:1rem;
 
 .bg-style {
 margin-top:1rem;
-width: 20rem;
+max-width: 60rem;
+min-height: 40rem;
 border: 5px solid black;
 background-color:  #853500;
 border-radius: 2rem;
+
+}
+
+.direction {
+display:flex;
+justify-content:center;
+align-items:center;
 
 }

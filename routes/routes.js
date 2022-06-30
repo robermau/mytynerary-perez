@@ -1,5 +1,5 @@
 const Router = require("express").Router();
-
+const validator = require ("../config/validator")
 const citiesControlers = require("../controlers/controlers");
 const { getCities, getOneCity, addCity, modifyCity, removeCity, multiplesCities } =
     citiesControlers;
@@ -23,6 +23,7 @@ Router.route("/itinerariesbycities/:id").get(findItineraryFromCity)
 Router.route("/itineraries/:id").get(getOneItineraries)
 
 
+
 Router.route("/signin").post(logInUser)
-Router.route("/signup").post(signUpUsers)
+Router.route("/auth/signup").post(validator,signUpUsers)
 module.exports = Router;

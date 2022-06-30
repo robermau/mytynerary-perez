@@ -13,6 +13,7 @@ const initialState= {
 }
 
 const usersReducers = (state= initialState, action) => {
+  
     switch(action.type){
         case 'GET_USER' : return {
             ...state,

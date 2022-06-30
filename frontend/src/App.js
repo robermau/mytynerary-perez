@@ -13,6 +13,7 @@ import { useEffect } from "react";
 import citiesActions from './actions/citiesActions';
 import SingIn from "./components/SingIn"
 import SignUp from "./components/SignUp"
+import { ToastContainer } from 'react-toastify';
 
 
 
@@ -31,6 +32,19 @@ useEffect(() => {
   return (
     
    <div className="App">
+
+<ToastContainer 
+             position="bottom-left"
+            theme='dark'
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover />
+
      <NavBar />
       <Routes>
         <Route path="/"element={<Index/>}/>
