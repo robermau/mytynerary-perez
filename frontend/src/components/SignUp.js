@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux"
 import userActions from "../actions/userActions"
-
+import GoogleSignUp from "./GoogleSignup";
 import 'react-toastify/dist/ReactToastify.css';
 import { toast } from 'react-toastify';
 
@@ -44,7 +44,7 @@ export default function SingUp() {
       })
 
     }
-    if (res.data.from === "form-Signup") {
+    if (res.data.from === "signup") {
       if (res.data.success) {
         toast.success(res.data.message)
       } else {
@@ -58,16 +58,8 @@ export default function SingUp() {
   }
   return (
 
-
-
-
-
-
-    <div className="bg-login ">
-
-
-
-      <form className="form text-xl" onSubmit={handleSubmit}>
+<div className="bg-login ">
+     <form className="form text-xl" onSubmit={handleSubmit}>
         <div className="bg-style">
           <h3 className=" mt-4 text-gray-900">Personal Information</h3>
 
@@ -103,7 +95,7 @@ export default function SingUp() {
             <div className="direction">
               <label className=" mr-6 ml-5  label text-gray-900">State / Province</label>
               <input type="text" name="region" id="region" className="mt-1  mb-8 focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md" />
-
+       
               <label className="mr-6 ml-5 label text-gray-900">ZIP / Postal code</label>
               <input type="text" name="postal-code" id="postal-code" className="mt-1 mb-8  focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md" />
             </div>
@@ -119,6 +111,8 @@ export default function SingUp() {
                 <option>Mexico</option>
               </select>
             </div>
+
+            <GoogleSignUp/>
           </div>
 
           <button type="submit" className="inline-flex mb-8  justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Save</button>

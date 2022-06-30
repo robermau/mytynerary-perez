@@ -33,7 +33,7 @@ useEffect(() => {
     
    <div className="App">
 
-<ToastContainer 
+           <ToastContainer 
              position="bottom-left"
             theme='dark'
             autoClose={5000}
@@ -43,7 +43,7 @@ useEffect(() => {
             rtl={false}
             pauseOnFocusLoss
             draggable
-            pauseOnHover />
+            pauseOnHover/>
 
      <NavBar />
       <Routes>

@@ -24,8 +24,7 @@ const validator = (req, res, next) => {
                 'string.max': '"last name": max 20 characters'
             }),
         imageUser: joi.string()
-          .trim()
-          .required(),
+          ,
         streetAdress:joi.string()
             .min(3)
             .max(30)
