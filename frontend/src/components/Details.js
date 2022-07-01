@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import '../index.css';
-// import axios from 'axios';
+ import axios from 'axios';
 import {useEffect } from 'react';
 import { Link as LinkRouter } from 'react-router-dom';
 import Itineraries from '../components/Itineraries';
@@ -26,7 +26,7 @@ export default function Details() {
 
     const { id } = useParams()
     console.log(id)
-    // const [city, setCity] = useState({})
+    //  const [city, setCity] = useState({})
     const dispatch = useDispatch();
     useEffect(() => {
 
@@ -43,8 +43,8 @@ export default function Details() {
         <div className='mainCardContainer'>
        
       { itineraries?.length > 0 ? <Itineraries data ={itineraries} /> : <h1 className='font-activity'>Dont found Itineraries </h1> }
-            
-            {/* <div className="container">
+            <div>
+            <div className="container">
                 <div className="front side">
                     <div className="content">
                         <h1 >{city.name}</h1>
@@ -67,8 +67,8 @@ export default function Details() {
 
                 </div>
                
-            </div> */}
-   
+            </div> 
+   </div>
             
         </div>
         

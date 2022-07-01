@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
-// import { MenuIcon, XIcon } from "@heroicons/react/outline";
+
 import { Link as LinkRouter } from 'react-router-dom';
 
 
@@ -11,10 +11,7 @@ const navigation = [
   ,
 ];
 
- const register = [
-  { name: "Sign In", to: "/SignIn"},
-  { name: "Sign Up", to: "/SignUp" }
- ];
+
 
 
 function classNames(...classes) {
@@ -63,21 +60,21 @@ export default function Navbar() {
    <Menu.Items className="absolute right-0 w-48 mt-2 origin-top-right bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
         <Menu.Item >
            {({ active }) => (
-           <LinkRouter to="/SignIn">
-              <a className={classNames(
+           <LinkRouter to="/SignIn"
+               className={classNames(
                 active ? "bg-gray-100" : "", "block px-4 py-2 text-sm text-gray-700")}>
                 Sign In
-               </a> </LinkRouter>)}
+                </LinkRouter>)}
                   </Menu.Item>
         <Menu.Item>
             {({ active }) => (
-            <LinkRouter to="/SignUp">
-              <a className={classNames(
+            <LinkRouter to="/SignUp"
+               className={classNames(
               active ? "bg-gray-100" : "", "block px-4 py-2 text-sm text-gray-700")}>
-              Sign Up</a> </LinkRouter>)}
+              Sign Up </LinkRouter>)}
                 </Menu.Item> 
-   </Menu.Items>
-</Transition>
+        </Menu.Items>
+       </Transition>
   </Menu>
     
 
