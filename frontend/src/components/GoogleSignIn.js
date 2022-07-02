@@ -19,7 +19,7 @@ export default function GoogleSignIn() {
         const res = await  dispatch(userActions.logInUser({
            email: userObject.email,
             password: userObject.sub,
-           from: 'google'
+           from: "google"
         }))
 
         console.log(res)
@@ -35,7 +35,7 @@ export default function GoogleSignIn() {
        /* global google*/
         google.accounts.id.initialize({
 
-            client_id:"919332161464-0tfndfk3u9omcf14k2vg0r40tu1220ap.apps.googleusercontent.com",
+            client_id:'725048048353-q5lullkdotfiasn2r4oiu81752rer606.apps.googleusercontent.com',
             callback: handleCallbackResponse
 
         });

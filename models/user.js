@@ -11,7 +11,9 @@ const userSchema = new mongoose.Schema({
     zipcode: { type: String, required: true },
     email:{ type: String, required: true },
     password:[{ type: String, required: true }],
-    from:{type:Array}
+    from:{type:Array},
+    uniqueString:{type:String, required:true},
+    verification:{type:Boolean , required:true}
 
 })
 

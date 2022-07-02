@@ -20,8 +20,8 @@ function SignIn() {
     console.log(event.target.value)
     console.log(event)
     const logedUser = {
-      password: event.target[0].value,
-      email: event.target[1].value,
+      password: event.target[3].value,
+      email: event.target[2].value,
       from: "form-Signin",
     }
     const res = await dispatch(userActions.logInUser(logedUser))
@@ -39,16 +39,16 @@ function SignIn() {
 
 
   return (
-    <form onSubmit={handleSubmit} className=" bg-login min-h-screen ">
+    <form onSubmit={handleSubmit} className="min-h-screen  bg-login">
       <div className="flex flex-col items-center justify-center">
 
-        <div className=" bg-orange-100 shadow rounded lg:w-1/3  md:w-1/2 w-full p-10 mt-16">
+        <div className="w-full p-10 mt-16 bg-orange-100 rounded shadow  lg:w-1/3 md:w-1/2">
           <p tabIndex={0} role="heading" aria-label="Login to your account" className="text-2xl font-extrabold leading-6 text-gray-800">
             Login to your account
           </p>
-          <p className="text-sm mt-4 font-medium leading-none text-gray-500">
+          <p className="mt-4 text-sm font-medium leading-none text-gray-500">
             Dont have account?{" "}
-            <span tabIndex={0} role="link" aria-label="Sign up here" className="text-sm font-medium leading-none underline text-gray-800 cursor-pointer">
+            <span tabIndex={0} role="link" aria-label="Sign up here" className="text-sm font-medium leading-none text-gray-800 underline cursor-pointer">
               {" "}
               Sign up here
             </span>
@@ -63,22 +63,22 @@ function SignIn() {
      
           <button aria-label="Continue with twitter" role="button" className="focus:outline-none  focus:ring-2 focus:ring-offset-1 focus:ring-gray-700 py-3.5 px-4 border rounded-lg border-gray-700 flex items-center w-full mt-4">
             <svg width={24} height={24} viewBox="0 0 19 20" xmlns="http://www.w3.org/2000/svg" ><path fill="#1976D2" d="M14 0H2C.897 0 0 .897 0 2v12c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V2c0-1.103-.897-2-2-2z" /><path fill="#FAFAFA" d="M13.5 8H11V6c0-.552.448-.5 1-.5h1V3h-2a3 3 0 0 0-3 3v2H6v2.5h2V16h3v-5.5h1.5l1-2.5z" /></svg>
-            <p className="text-base font-medium ml-4 text-gray-700">Continue with Facebook</p>
+            <p className="ml-4 text-base font-medium text-gray-700">Continue with Facebook</p>
           </button>
-          <div className="w-full flex items-center justify-between py-5">
+          <div className="flex items-center justify-between w-full py-5">
             <hr className="w-full bg-gray-400" />
             <p className="text-base font-medium leading-4 px-2.5 text-gray-400">OR</p>
-            <hr className="w-full bg-gray-400  " />
+            <hr className="w-full bg-gray-400 " />
           </div>
           
           <div>
             <label className="text-sm font-medium leading-none text-gray-800">Email</label>
-            <input aria-label="enter email adress" name="email" role="input" type="email" className="bg-gray-200 border rounded focus:outline-none text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2" />
+            <input aria-label="enter email adress" name="email" role="input" type="email" className="w-full py-3 pl-3 mt-2 text-xs font-medium leading-none text-gray-800 bg-gray-200 border rounded focus:outline-none" />
           </div>
-          <div className="mt-6  w-full">
+          <div className="w-full mt-6">
             <label className="text-sm font-medium leading-none text-gray-800">Password</label>
             <div className="relative flex items-center justify-center">
-              <input aria-label="enter Password" name="password" role="input" type="password" className="bg-gray-200 border rounded focus:outline-none text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2" />
+              <input aria-label="enter Password" name="password" role="input" type="password" className="w-full py-3 pl-3 mt-2 text-xs font-medium leading-none text-gray-800 bg-gray-200 border rounded focus:outline-none" />
               <div className="absolute right-0 mt-2 mr-3 cursor-pointer">
              
                 <svg width={16} height={16} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -92,7 +92,7 @@ function SignIn() {
             </div>
           </div>
           <div className="mt-8">
-            <button role="button" type="submit" aria-label="create my account" className="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 text-sm font-semibold leading-none text-white focus:outline-none bg-indigo-700 border rounded hover:bg-indigo-600 py-4 w-full">
+            <button role="button" type="submit" aria-label="create my account" className="w-full py-4 text-sm font-semibold leading-none text-white bg-indigo-700 border rounded focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 focus:outline-none hover:bg-indigo-600">
               Create my account
             </button>
           </div>

@@ -1,15 +1,22 @@
-const user = require('../models/user')
+
+const crypto = require("crypto")
+const User = require('../models/user')
 const bcryptjs = require('bcryptjs')
+const sendVerification = require('../controlers/sendEmail')
+const jwt = require("jsonwebtoken")
 
 
 const usersControllers = {
 
     signUpUsers: async (req, res) => {
-        const{firstName, lastName,imageUser, email, password, from,country,city,streetAdress,state,zipcode} = req.body.userData 
+        const { firstName, lastName, imageUser, email, password, from, country, city, streetAdress, state, zipcode } = req.body.userData
 
 
         try {
-            const userExist = await user.findOne({ email })
+            const userExist = await User.findOne({ email })
+            const verification = false
+            const uniqueString = crypto.randomBytes(15).toString('hex')
+
             if (userExist && userExist.lenght > 0) {
                 if (userExist.from.indexOf(from) !== -1) {
                     res.json({
@@ -33,23 +40,27 @@ const usersControllers = {
                 }
             } else {
 
-                const passwordHashed =  bcryptjs.hashSync(password, 10)
-                const newUser = await new user({
-                    firstName: firstName,  
-                    lastName:lastName,
-                    imageUser:imageUser,
-                    streetAdress:streetAdress,
-                    city:city,
-                    state:state,
-                    zipcode:zipcode,
-                    email:email,
+                const passwordHashed = bcryptjs.hashSync(password, 10)
+                const newUser = await new User({
+                    uniqueString: uniqueString,
+                    verification: verification,
+                    firstName: firstName,
+                    lastName: lastName,
+                    imageUser: imageUser,
+                    streetAdress: streetAdress,
+                    city: city,
+                    state: state,
+                    zipcode: zipcode,
+                    email: email,
                     password: passwordHashed,
                     verifiedEmail: false,
                     from: [from],
-                    country:country
+                    country: country
                 })
+                console.log(newUser)
                 if (from !== 'form-Signup') {
                     await newUser.save()
+
                     res.json({
                         success: true,
                         from: "signup",
@@ -58,6 +69,7 @@ const usersControllers = {
 
                 } else {
                     await newUser.save()
+                    await sendVerification(email, uniqueString)
                     res.json({
                         success: true,
                         from: "signup",
@@ -68,7 +80,7 @@ const usersControllers = {
             }
         } catch (error) {
             res.json({
-                 console : console.log(error),
+                console: console.log(error),
                 success: false,
                 message: " Anything is wrong, try in a few min"
 
@@ -80,9 +92,11 @@ const usersControllers = {
         const { email, password, from } = req.body.logedUser
         try {
 
-            const userExist = await user.findOne({ email })
+            const userExist = await User.findOne({ email })
+
             // const indexPass = userExist.from.indexOf(from)
             if (!userExist) {
+                console.log(userExist)
                 res.json({ success: false, message: "Your user  not been registered, please sign in " })
             } else {
                 if (from !== "form-signUp") {
@@ -92,24 +106,29 @@ const usersControllers = {
                         const userData = {
 
                             id: userExist._id,
-                            firstName:userExist.firstName,
-                            lastName:userExist.lastName,
+                            firstName: userExist.firstName,
+                            lastName: userExist.lastName,
                             password: userExist.passwordHashed,
                             email: userExist.email,
                             from: from,
                         }
 
-                        await userExist.save(
-                            res.json({
-                                success: true,
-                                from: from,
-                                response: { userData },
-                                message: "Wellcome" + "  " + userData.firstName + " " + userData.lastName
+                        await userExist.save()
+
+                        const token = jwt.sign({ ...userData }, process.env.SECRET_KEY, { expiresIn: 60 * 60 * 24 })
+
+                        res.json({
+                            success: true,
+                            from: from,
+                            response: { token, userData },
+                            message: "Wellcome" + "  " + userData.firstName + " " + userData.lastName
 
 
-                            })
-                        )
-                    } else {
+                        })
+
+
+                    }
+                    else {
 
                         res.json({
                             success: false,
@@ -121,40 +140,84 @@ const usersControllers = {
                     }
 
                 } else {
-                    let passwordMatch = userExist.password.filter(pass => bcryptjs.compareSync(password, pass))
-                    if (passwordMatch.lenght > 0) {
-                        const userData = {
-                            id: userExist._id,
-                            firstName: userExist.firstName,
-                            lastName: userExist.lastName,
-                            email: userExist.email,
-                            from: from,
+                    if (userExist.verifiedEmail) {
 
+                        let passwordMatch = userExist.password.filter(pass => bcryptjs.compareSync(password, pass))
+                        /* console.log(contraseñaCoincide) */
+                        /* console.log("resultado de busqueda de contraseña: " + (contraseñaCoincide.length > 0)) */
+                        if (passwordMatch.length > 0) {
+
+                            const userData = {
+                                id: userExist._id,
+
+                                firstName: userExist.firstName,
+                                lastName: userExist.lastName,
+                                email: userExist.email,
+                                from: userExist.from
+                            }
+                            const token = jwt.sign({ ...userData }, process.env.SECRET_KEY, { expiresIn: 60 * 60 * 24 })
+                            res.json({
+                                success: true,
+                                from: from,
+                                response: { token, userData },
+                                message: "Welcome again " + userData.firstName,
+                            })
+                        } else {
+                            res.json({
+                                success: false,
+                                from: from,
+                                message: "User and password do not match",
+                            })
                         }
-                        await userExist.save()
-
-                        res.json({
-                            success: true,
-                            from: from,
-                            response: {  userData }, 
-                            message: "Wellcome again" + " " + logedUser.firstName + " " + logedUser.lastName,
-                        })
-
                     } else {
                         res.json({
                             success: false,
                             from: from,
-                            message: "The user or password is wrong"
+                            message: "You have not verified your email"
                         })
                     }
-                }
+
+                } //SI NO ESTA 
 
             }
 
         } catch (error) {
-            res.json ({
-                success:false,
+            res.json({
+                success: false,
                 message: "Something went wrong. Try again in a few seconds"
+            })
+        }
+    },
+
+    verifyMail: async (req, res) => {
+        console.log(req.params)
+        const string = req.params.string
+        const user = await User.findOne({ uniqueString: string })
+        console.log(user)
+        if (user) {
+            user.verification = true
+            await user.save()
+            res.redirect("http://localhost:3000")
+        }
+        else { res.json } ({
+            success: false,
+            message: `email has not been confirmed yet`
+        })
+    },
+    verifyToken: (req, res) => {
+console.log(req.user)
+        if (req, res) {
+            res.json({
+                success: true,
+                response: { id: req.user.id, firstName: req.user.firstName, email: req.user.email, from: 'token' },
+                message: "Welcome " + req.user.firstName
+            })
+        } else {
+            console.log(req.err)
+            res.json({
+                success: false,
+                message: "Please, do the signin again",
+                
             })
         }
     }

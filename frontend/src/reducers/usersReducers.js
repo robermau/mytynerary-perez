@@ -21,7 +21,7 @@ const usersReducers = (state= initialState, action) => {
 
         }
 
-        case 'GET_SIGN' : return {
+        case 'message' : return {
             ...state,
             userSign:action.payload
 

@@ -8,7 +8,7 @@ const validator = (req, res, next) => {
             .max(20)
             .trim()
             .pattern(new RegExp('[a-zA-Z]'))
-            .required()
+           
             .messages({
                 'string.min': 'name: min 3 characters',
                 'string.max': 'name: max 20 characters'
@@ -18,7 +18,7 @@ const validator = (req, res, next) => {
             .max(20)
             .trim()
             .pattern(new RegExp('[a-zA-Z]'))
-            .required()
+          
             .messages({
                 'string.min': '"last name": min 3 characters',
                 'string.max': '"last name": max 20 characters'

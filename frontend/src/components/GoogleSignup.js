@@ -40,13 +40,13 @@ export default function GoogleSignUp() {
      
     
     
-        if (res.data.from === "validator") {
+        if (res.data.from === 'validator') {
           errorValidator.forEach(element => {
            toast.error(element.message)
           })
     
         }
-        if (res.data.from === "signup") {
+        if (res.data.from === 'signup') {
           if (res.data.success) {
             toast.success(res.data.message)
           } else {
@@ -58,7 +58,7 @@ export default function GoogleSignUp() {
        /* global google*/
         google.accounts.id.initialize({
 
-            client_id:"919332161464-0tfndfk3u9omcf14k2vg0r40tu1220ap.apps.googleusercontent.com",
+            client_id:'725048048353-q5lullkdotfiasn2r4oiu81752rer606.apps.googleusercontent.com',
             callback: handleCallbackResponse
 
         });

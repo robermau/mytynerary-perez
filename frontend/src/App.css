@@ -470,18 +470,20 @@ margin-top:1rem;
 
 .bg-style {
 margin-top:1rem;
-max-width: 60rem;
-min-height: 40rem;
+width: 60vw;
+
 border: 5px solid black;
 background-color:  #853500;
 border-radius: 2rem;
 
 }
 
+
 .direction {
 display:flex;
+flex-direction: row;
 justify-content:center;
-align-items:center;
+align-items:flex-start;
 
 }
 
@@ -507,3 +509,20 @@ container {
   font-size:1.5rem;
 }
 }
+@media (max-width: 1260px) {
+  .direction {
+    display:flex;
+    flex-direction:column;
+    flex-wrap:wrap;
+    justify-content:center;
+    align-items:center;
+  }
+  }
+  @media (max-width: 420px) {
+    
+     .input {
+           width:10rem; 
+     }
+    }
+    
+    

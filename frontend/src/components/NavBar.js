@@ -47,7 +47,7 @@ export default function Navbar() {
               </Menu.Button>
               
             </div>
-          
+           
             <Transition
               as={Fragment}
               enter="transition ease-out duration-100"

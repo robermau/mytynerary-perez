@@ -14,6 +14,7 @@ import citiesActions from './actions/citiesActions';
 import SingIn from "./components/SingIn"
 import SignUp from "./components/SignUp"
 import { ToastContainer } from 'react-toastify';
+import userActions from "./actions/userActions.js";
 
 
 
@@ -26,8 +27,21 @@ function App() {
 const dispatch = useDispatch() 
 useEffect(() => {
   dispatch (citiesActions.getCities()) 
+  if (localStorage.getItem('token') !== null) {
+    const token = localStorage.getItem('token')
+    console.log(token)
+    dispatch(userActions.verifyToken(token))
+  }
 // eslint-disable-next-line
 },[])
+
+  
+  
+  // eslint-disable-next-line 
+
+
+
+
 
   return (
     
@@ -60,9 +74,7 @@ useEffect(() => {
       />
          
          <Footer />
-      
-      
-     </div>
+       </div>
 
   );
 }
