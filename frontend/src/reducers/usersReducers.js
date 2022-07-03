@@ -1,10 +1,7 @@
 const initialState= {
 
     user: null ,
-        
-
-    
-       userSign:{
+        userSign:{
         message:"",
         success:false
 

@@ -25,43 +25,6 @@ const validator = (req, res, next) => {
             }),
         imageUser: joi.string()
           ,
-        streetAdress:joi.string()
-            .min(3)
-            .max(30)
-            
-            .pattern(new RegExp('[a-zA-Z]'))
-          
-            .messages({
-                'string.min': 'name: min 3 characters',
-                'string.max': 'name: max 30 characters'
-            }), 
-
-        city:joi.string()
-            .min(3)
-            .max(30)
-            .trim()
-            .pattern(new RegExp('[a-zA-Z]'))
-        
-            .messages({
-                'string.min': 'name: min 3 characters',
-                'string.max': 'name: max 30 characters'
-            }), 
-        state:joi.string()
-            .min(3)
-            .max(20)
-            .trim()
-           .messages({
-                'string.min': 'name: min 3 characters',
-                'string.max': 'name: max 20 characters'
-            }), 
-
-        zipcode: joi.string()
-           .max(10)
-           .min(3)
-           .messages({
-            'string.min': 'name: min 3 characters',
-            'string.max': 'name: max 20 characters'
-        }),  
         password: joi.string()
             .min(8)
             .max(30)
@@ -73,15 +36,7 @@ const validator = (req, res, next) => {
             }),
 
         country: joi.string()
-            .min(3)
-            .max(20)
-            .trim()
-            .pattern(new RegExp('[a-zA-Z]'))
-           
-            .messages({
-                'string.min': 'name: min 3 characters',
-                'string.max': 'name: max 20 characters'
-            }), 
+           , 
 
         email: joi.string()
            .email({ minDomainSegments: 2 })

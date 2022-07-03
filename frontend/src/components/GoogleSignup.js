@@ -6,7 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { toast } from 'react-toastify';
 
 
-export default function GoogleSignUp() {
+export default function GoogleSignUp(props) {
     const dispatch = useDispatch();
    
     
@@ -24,12 +24,8 @@ export default function GoogleSignUp() {
             imageUser: userObject.picture,
             email: userObject.email,
             password: userObject.sub,
-            country:"google",
-            streetAdress: "google",
-            city:"google",
-            state:"google",
-            zipcode:"google",
-            from: 'google'
+            country:props.props,
+             from: 'google'
         }))
 
       

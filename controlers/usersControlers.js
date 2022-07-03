@@ -9,7 +9,7 @@ const jwt = require("jsonwebtoken")
 const usersControllers = {
 
     signUpUsers: async (req, res) => {
-        const { firstName, lastName, imageUser, email, password, from, country, city, streetAdress, state, zipcode } = req.body.userData
+        const { firstName, lastName, imageUser, email, password, from, country } = req.body.userData
 
 
         try {
@@ -47,10 +47,6 @@ const usersControllers = {
                     firstName: firstName,
                     lastName: lastName,
                     imageUser: imageUser,
-                    streetAdress: streetAdress,
-                    city: city,
-                    state: state,
-                    zipcode: zipcode,
                     email: email,
                     password: passwordHashed,
                     verifiedEmail: false,

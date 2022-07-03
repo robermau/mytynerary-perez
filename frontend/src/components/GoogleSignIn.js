@@ -41,7 +41,7 @@ export default function GoogleSignIn() {
         });
         google.accounts.id.renderButton(
             document.getElementById('buttonDiv'),
-            { theme: "outline", text: 'signin_with', size: "medium", locale:"en" }
+            { theme: "outline", text: 'signin_with', size: "medium", locale:"en"}
          )
     });
     return (

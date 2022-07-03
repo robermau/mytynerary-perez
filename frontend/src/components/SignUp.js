@@ -55,28 +55,29 @@ export default function SingUp() {
     }
 
     
-
+ 
 
   }
+  const countries = ["Argentina","Brasil","Chile","Usa","Spain"]
   return (
-             <div className="h-screen bg-login max-h-min"> 
+             <div className=" bg-login bg-signup"> 
 
-
-          <label className="mb-8 ml-5 mr-6 text-gray-900 label">Country</label>
+            <div className="country">
+          <label className="mb-8 ml-5 mr-6 text-gray-900 label">  <h1> Select your country for registration</h1> Country</label>
               <select onChange={e=> setCountry(e.target.value)} id="country" name="country" className="mt-1 bg-white border-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 ">
                 <option> </option>
-                <option value="Argentina">Argentina</option>
-                <option  value="Brasil">Brasil</option>
-                <option  value="Chile">Chile</option>
-                <option  value="Usa">Usa</option>
-                <option  value="Spain">Spain</option>
+                
+                {countries.map((country, index) => (
+                                        <option key={country}>{country}</option>
+                                    ))}
               </select>
+              </div>
               {
                 country ? (
                 <div className="bg-login ">
                 <form className="text-xl form" onSubmit={handleSubmit}>
                    <div className="bg-style">
-                     <h3 className="mt-4 text-gray-900 ">Personal Information</h3>
+                     <h3 className="mt-4 text-gray-900 text-form ">Personal Information</h3>
                      <div className="display-form">
                      <div className="labelName ">
                        <div className="direction "> 
@@ -115,16 +116,13 @@ export default function SingUp() {
                      <div className="direction">
                        <label className="mb-8 ml-5 mr-6 text-gray-900 label"> Photo </label>
                        <input type="text" className="mt-1 border-gray-300 rounded-md input focus:ring-indigo-500 focus:border-indigo-500" placeholder="https://www.prueba.com/" />
-         
-         
-                    
-                       </div>
+                  </div>
                      </div>
-         
-                     <GoogleSignUp/>
-                   </div>
-         
-                   <button type="submit" className="inline-flex justify-center px-4 py-2 mb-8 text-sm font-medium text-white bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Save</button>
+                      </div>
+                   <div className="btn-form"> 
+                   <GoogleSignUp props={country}/>
+                   <button type="submit" className="inline-flex justify-center px-4 py-2 mt-8 mb-8 text-sm font-medium text-white bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Send</button>
+                 </div>
                  </div>
          
                </form>
