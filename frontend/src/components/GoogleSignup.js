@@ -8,12 +8,12 @@ import { toast } from 'react-toastify';
 
 export default function GoogleSignUp() {
     const dispatch = useDispatch();
-
-
+   
+    
 
 
     async function handleCallbackResponse(response) {
-       
+   
         console.log(response.credential);
         let userObject = jwt_decode(response.credential);
         console.log(userObject);
@@ -37,23 +37,26 @@ export default function GoogleSignUp() {
         const errorValidator = res.data.message
         console.log(errorValidator)
     
-     
+      
     
     
         if (res.data.from === 'validator') {
           errorValidator.forEach(element => {
            toast.error(element.message)
+          
           })
     
         }
         if (res.data.from === 'signup') {
           if (res.data.success) {
             toast.success(res.data.message)
+         
           } else {
             toast.error(res.data.message)
           }
         }
     }
+    
     useEffect(() => {
        /* global google*/
         google.accounts.id.initialize({

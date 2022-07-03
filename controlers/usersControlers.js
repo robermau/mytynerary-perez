@@ -110,6 +110,7 @@ const usersControllers = {
                             lastName: userExist.lastName,
                             password: userExist.passwordHashed,
                             email: userExist.email,
+                            imageUser:userExist.imageUser,
                             from: from,
                         }
 
@@ -205,7 +206,7 @@ const usersControllers = {
         })
     },
     verifyToken: (req, res) => {
-console.log(req.user)
+            console.log(req.user)
         if (req, res) {
             res.json({
                 success: true,

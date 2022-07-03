@@ -4,6 +4,7 @@ import userActions from "../actions/userActions"
 import 'react-toastify/dist/ReactToastify.css';
 import { toast } from 'react-toastify';
 import GoogleSignIn from "./GoogleSignIn";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -13,11 +14,11 @@ import GoogleSignIn from "./GoogleSignIn";
 function SignIn() {
 
   const dispatch = useDispatch()
-
+const navigate = useNavigate()
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-    console.log(event.target.value)
+    
     console.log(event)
     const logedUser = {
       password: event.target[3].value,
@@ -29,6 +30,7 @@ function SignIn() {
 
     if (res.data.success) {
       toast.success(res.data.message)
+      navigate('/')
     } else {
       toast.error(res.data.message)
     }
@@ -39,10 +41,10 @@ function SignIn() {
 
 
   return (
-    <form onSubmit={handleSubmit} className="min-h-screen  bg-login">
+    <form onSubmit={handleSubmit} className="min-h-screen bg-login">
       <div className="flex flex-col items-center justify-center">
 
-        <div className="w-full p-10 mt-16 bg-orange-100 rounded shadow  lg:w-1/3 md:w-1/2">
+        <div className="w-full p-10 mt-16 bg-orange-100 rounded shadow lg:w-1/3 md:w-1/2">
           <p tabIndex={0} role="heading" aria-label="Login to your account" className="text-2xl font-extrabold leading-6 text-gray-800">
             Login to your account
           </p>

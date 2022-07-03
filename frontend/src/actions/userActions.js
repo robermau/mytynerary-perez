@@ -34,7 +34,7 @@ const userActions = {
 
                 localStorage.setItem('token', user.data.response.token)
                 console.log(user.data.success) //tomo el token que le envie desde el back y lo envio al local storage
-                dispatch({ type: "GET_SIGN", payload: user.data.response.userData });
+                dispatch({ type: "GET_USER", payload: user.data.response.userData });
             }
             dispatch({
                 type: 'message',
@@ -64,10 +64,10 @@ const userActions = {
                     if (user.data.success) {
 
                         dispatch({ type: 'GET_USER', payload: user.data.response });
-                        dispatch({ type: 'message' ,
+                        dispatch({ type: 'GET_SIGN' ,
                             payload: { view:true,
                                 message:user.data.message,
-                            
+                                userData:user.data.response,
                                 success: user.data.success
 
                             }
@@ -91,6 +91,15 @@ const userActions = {
 
                     localStorage.removeItem('token')
                 })
+        }
+    },
+    logOutUser: () => {
+        return async (dispatch, getState) => {
+            localStorage.removeItem('token')
+            dispatch({
+                type: 'GET_USER',
+                payload: null
+            })
         }
     }
 
