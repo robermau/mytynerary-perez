@@ -20,13 +20,9 @@ export default function SingUp() {
     const userData = {
       firstName: event.target[0].value,
       lastName: event.target[1].value,
-      imageUser: event.target[8].value,
-      streetAdress: event.target[4].value,
-      city: event.target[5].value,
-      state: event.target[6].value,
-      zipcode: event.target[7].value,
+      imageUser: event.target[4].value,
       password: event.target[3].value,
-      country: event.target[4].value,
+      country: country,
       email: event.target[2].value,
       from: "form-Signup",
       
@@ -63,6 +59,7 @@ export default function SingUp() {
              <div className=" bg-login bg-signup"> 
 
             <div className="country">
+          
           <label className="mb-8 ml-5 mr-6 text-gray-900 label">  <h1> Select your country for registration</h1> Country</label>
               <select onChange={e=> setCountry(e.target.value)} id="country" name="country" className="mt-1 bg-white border-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 ">
                 <option> </option>
@@ -71,6 +68,7 @@ export default function SingUp() {
                                         <option key={country}>{country}</option>
                                     ))}
               </select>
+              
               </div>
               {
                 country ? (
@@ -99,20 +97,7 @@ export default function SingUp() {
          
                      </div>
          
-                     <div className="direction" >
-                       <label className="mb-8 ml-5 mr-6 text-gray-900 label">Street address</label>
-                       <input type="text" name="street-address" id="street-address" className="mt-1 border-gray-300 rounded-md input focus:ring-indigo-500 focus:border-indigo-500" />
-                       <label className="mb-8 ml-5 mr-6 label text-gray-9000">City</label>
-                       <input type="text" name="city" id="city" className="mt-1 border-gray-300 rounded-md input focus:ring-indigo-500 focus:border-indigo-500" />
-         
-                     </div>
-                     <div className="direction">
-                       <label className="mb-8 ml-5 mr-6 text-gray-900 label">State / Province</label>
-                       <input type="text"  id="region" className="rounded-md input mt-1border-gray-300 focus:ring-indigo-500 focus:border-indigo-500" />
-                
-                       <label className="mb-8 ml-4 mr-6 text-gray-900 label">ZIP / Postal code</label>
-                       <input type="text" name="postal-code" id="postal-code" className="mt-1 border-gray-300 rounded-md input focus:ring-indigo-500 focus:border-indigo-500" />
-                     </div>
+                     
                      <div className="direction">
                        <label className="mb-8 ml-5 mr-6 text-gray-900 label"> Photo </label>
                        <input type="text" className="mt-1 border-gray-300 rounded-md input focus:ring-indigo-500 focus:border-indigo-500" placeholder="https://www.prueba.com/" />
