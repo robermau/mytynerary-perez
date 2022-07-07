@@ -1,6 +1,6 @@
 const initialState = { // defino el estado inicial
     itineraries: [], // para contener los itinerarios
-    getOneItinerary: {}, // para contener 1 itinerario
+    getOneItinerary: [], // para contener 1 itinerario
     getItinerariesFromCity: [] // para contener los itinerarios por ciudad
 }
 

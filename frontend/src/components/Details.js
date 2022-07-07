@@ -35,15 +35,16 @@ export default function Details() {
        
 // eslint-disable-next-line
     }, [id])
-  const city =useSelector (store => store.citiesReducers.oneCity)
+  const city =  useSelector (store => store.citiesReducers.oneCity)
+  console.log(city)
   const itineraries= useSelector(store=>store.itinerariesReducer.getItinerariesFromCity)
  console.log(itineraries)
 
     return (
         <div className='mainCardContainer'>
        
-      { itineraries?.length > 0 ? <Itineraries data ={itineraries} /> : <h1 className='font-activity'>Dont found Itineraries </h1> }
-            <div>
+      { itineraries.length > 0 ? <Itineraries data={itineraries} id={id} /> : <h1 className='font-activity'>Dont found Itineraries </h1> }
+            
             <div className="container">
                 <div className="front side">
                     <div className="content">
@@ -70,7 +71,7 @@ export default function Details() {
             </div> 
    </div>
             
-        </div>
+       
         
     )
 

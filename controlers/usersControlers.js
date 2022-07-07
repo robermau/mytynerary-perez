@@ -13,9 +13,9 @@ const usersControllers = {
 
 
         try {
-            const userExist = await User.findOne({ email })
+            const userExist = await User.findOne({ email }) //busca algun usuario ya creado con el metodo finOne
             const verification = false
-            const uniqueString = crypto.randomBytes(15).toString('hex')
+            const uniqueString = crypto.randomBytes(15).toString('hex') 
 
             if (userExist && userExist.lenght > 0) {
                 if (userExist.from.indexOf(from) !== -1) {

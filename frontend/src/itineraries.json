@@ -211,27 +211,27 @@
   },
 
   {
-    "nameItinerary": "Egypt past",
-    "imagePerson": "https://s03.s3c.es/imag/_v0/630x473/7/8/a/embajador_egipto_3.jpg",
-    "namePerson": "Ayman Zein El Dein",
+    "nameItinerary": "Travel to Guiza",
+    "imagePerson": "https://cdn.soccerwiki.org/images/player/35248.png",
+    "namePerson": "Ahmed Elmohamady",
     "precie": "💵💵",
     "hashtags": "#temple #egypt #ancient #travel",
     "likes": "0",
     "duration": "4 hs",
     "activitys": [
       {
-        "nameActivity": "Egypt Excursions Online Port Said",
-        "imageActivity": "https://media-cdn.tripadvisor.com/media/photo-s/07/1d/c8/17/egypt-excursions-online.jpg"
+        "nameActivity": "Pirámides de Saqqara",
+        "imageActivity": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/61/75/6e/visita-la-piramide-escalonada.jpg?w=1200&h=-1&s=1"
       },
 
       {
-        "nameActivity": "Ramasside Tours",
-        "imageActivity": "https://media-cdn.tripadvisor.com/media/photo-m/1280/21/40/e7/8d/ramasside-tours.jpg"
+        "nameActivity": "Differentours",
+        "imageActivity": "https://media-cdn.tripadvisor.com/media/photo-p/14/f3/fc/19/20181005-153911-largejpg.jpg"
       },
 
       {
-        "nameActivity": "Suez Canal",
-        "imageActivity": "https://www.fundacionaquae.org/wp-content/uploads/2021/04/canal-de-suez-1024x526.jpg.webp"
+        "nameActivity": "Great Sphinx",
+        "imageActivity": "https://www.worldhistory.org/img/r/p/500x600/5977.jpg?v=1653855367"
       }
     ]
   },

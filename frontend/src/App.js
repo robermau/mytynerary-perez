@@ -27,10 +27,10 @@ function App() {
 const dispatch = useDispatch() 
 useEffect(() => {
   dispatch (citiesActions.getCities()) 
-  if (localStorage.getItem('token') !== null) {
-    const token = localStorage.getItem('token')
-    console.log(token)
-    dispatch(userActions.verifyToken(token))
+  if (localStorage.getItem('token') !== null) {  // se verifica si hay un token diferente a nullo
+    const token = localStorage.getItem('token')  // en la constante se guarda el token en el local storage
+    console.log(token) 
+    dispatch(userActions.verifyToken(token))   // se hace un dispatch solo cuando existe un token
   }
 // eslint-disable-next-line
 },[])

@@ -52,10 +52,11 @@ const userActions = {
         console.log(token)
         return async (dispatch, getState) => {
 
-            await axios.get('http://localhost:4000/api/auth/token', {
+            await axios.get('http://localhost:4000/api/auth/token', {  // la ruta recibe a traveza del header el metodo de authorizacion bearer
                 headers: {
                     'Authorization': 'Bearer ' + token
-                },
+                }, //  Bearer es un metodo que permite autenticar y autorizar usuarios 
+                   // El espacio es para que no se quede el token pegado.
 
             })
          

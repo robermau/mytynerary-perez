@@ -7,17 +7,17 @@ import { useState } from "react";
 
 
 
-export default function SingUp() {
+export default function SingUp() {  // camputramos lso datos del usuaroio
 
  const [country , setCountry] = useState("")
   const dispatch = useDispatch()
 
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async (event) => {  // cuando hacemos en el submit se crea la const userdata
     event.preventDefault()
     console.log(event)
 
-    const userData = {
+    const userData = {  // se guardan en e lmodelo
       firstName: event.target[0].value,
       lastName: event.target[1].value,
       imageUser: event.target[4].value,

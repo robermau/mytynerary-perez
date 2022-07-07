@@ -14,8 +14,8 @@ export default function GoogleSignUp(props) {
 
     async function handleCallbackResponse(response) {
    
-        console.log(response.credential);
-        let userObject = jwt_decode(response.credential);
+        console.log(response.credential); // el response son los datos del usuario
+        let userObject = jwt_decode(response.credential); // coon jwt desestructurmaos la respuesta
         console.log(userObject);
         
         const res = await dispatch(userActions.signUpUsers({
@@ -55,13 +55,13 @@ export default function GoogleSignUp(props) {
     
     useEffect(() => {
        /* global google*/
-        google.accounts.id.initialize({
+        google.accounts.id.initialize({ // verifica el client id con el delevelpor account
 
             client_id:'725048048353-q5lullkdotfiasn2r4oiu81752rer606.apps.googleusercontent.com',
-            callback: handleCallbackResponse
+            callback: handleCallbackResponse // con el callback trae la informacion 
 
         });
-        google.accounts.id.renderButton(
+        google.accounts.id.renderButton( // renderiza el boton y trae la infor q pasa por detras
             document.getElementById('buttonDiv'),
             { theme: "outline", text: 'signup_with', size: "medium",  locale:"en" }
          )

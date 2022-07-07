@@ -6,7 +6,7 @@ const OAuth2 = google.auth.OAuth2
 
 const sendVerification = async (email,string) =>{
 
-    const myOAuth2Client = new OAuth2(
+    const myOAuth2Client = new OAuth2( // crea la configuracion con estos 3 parametros
         process.env.GOOGLE_CLIENTID,
         process.env.GOOGLE_CLIENTSECRET,
         'https://developers.google.com/oauthplayground'
@@ -18,11 +18,11 @@ myOAuth2Client.setCredentials({refresh_token:process.env.GOOGLE_REFRESHTOKEN})
 
 const accessToken = await myOAuth2Client.getAccessToken()
 
-const transporter = nodemailer.createTransport({
+const transporter = nodemailer.createTransport({  // transporter es un metodo de nodemailer
     service:'gmail',
     auth: {
         user:process.env.USER,
-        type:'OAUTH2',
+        type:'OAUTH2', // es uan autorizacion especifica de google
     
        
         clientId:process.env.GOOGLE_CLIENTID,
@@ -32,7 +32,7 @@ const transporter = nodemailer.createTransport({
 
     },
     tls: {
-        rejectUnauthorized:false
+        rejectUnauthorized:false // objeto para no bloquee el antivirus
     }
 
 

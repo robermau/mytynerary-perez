@@ -43,6 +43,7 @@
  flex-direction:column-reverse;
  align-items:center;
   min-height :100vh;
+  justify-content:center;
 }
 
 h1,

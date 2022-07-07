@@ -47,11 +47,12 @@ const validator = (req, res, next) => {
         from: joi.string()
             .required()
     })
-    const validation = schema.validate(req.body.userData, { abortEarly: false })
+    const validation = schema.validate(req.body.userData, { abortEarly: false }) // el abortEarly ejecuta una respuesta cada vez q encuentra un error
+
     if (validation.error) {
         return res.json({ success: false, from: 'validator', message: validation.error.details, test: validation })
     }
-    next()
+    next() // el metodo next pasa al controlador signup para que se ejecute 
 }
 
 module.exports = validator

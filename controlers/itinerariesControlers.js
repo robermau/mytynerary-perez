@@ -9,7 +9,7 @@ const itinerariesControlers = {
         let error = null
 
         try {
-            city = await Itinerary.findOne({ _id: id })
+            city = await Itinerary.findOne({ city: id }).populate("activitys")
 
         } catch (err) {
             error = err
@@ -64,32 +64,28 @@ const itinerariesControlers = {
         let itineraries
         let error = null
         try {
-            itineraries = await Itinerary.find().populate('city')
-        } catch (err) { error = err }
+            itineraries = await Itinerary.find().populate("city")
+        } catch (err) {error = err}
         res.json({
             response: error ? 'ERROR' : { itineraries },
             success: error ? false : true,
             error: error
         })
-
     },
 
-    modifyItineraries: async (req, res) => {
+    modifyItinerary: async (req, res) => {
         const id = req.params.id
-        const itinerary = req.body.data
+        const itineraries = req.body
         let itinerarydb
         let error = null
-
         try {
-            itinerarydb = await Itinerary.findOneAndUpdate({ _id: id }, itinerary, { new: true })
-        }
-        catch (err) { error = err }
+            itinerarydb = await Itinerary.findOneAndUpdate({ _id: id }, itineraries, { new: true })
+        } catch (err) {error = err}
         res.json({
             response: error ? 'ERROR' : itinerarydb,
             success: error ? false : true,
             error: error
         })
-
     },
 
 
@@ -119,7 +115,7 @@ const itinerariesControlers = {
         let error = null
 
         try {
-            itineraries = await Itinerary.find({city:id}).populate('city')
+            itineraries = await Itinerary.find({city:id}).populate('activitys')
         }
         catch (err) { error = err }
         res.json({
@@ -128,30 +124,30 @@ const itinerariesControlers = {
             error: error
         })
 
-    }
+    },
+    likeDislike: async (req, res) => {
+        const id = req.params.id 
+        const user = req.user.id
+console.log(id)
+         await Itinerary.findOne({ _id: id })
+
+            .then((itineraries) => {
+              console.log(itineraries)
+              if (itineraries.likes.includes(user)) {
+                    console.log(itineraries)
+                     Itinerary.findOneAndUpdate({ _id: id }, { $pull: { likes: user } }, { new: true })//PULL QUITA, SACA
+                        .then((response) => res.json({ success: true, response: response.likes }))
+                        .catch((error) => console.log(error))
+               } else {
+                    Itinerary.findOneAndUpdate({ _id: id }, { $push: { likes: user } }, { new: true })//PUSH AGREGA
+                        .then((response) => res.json({ success: true, response: response.likes }))
+                        .catch((error) => console.log(error))
+                }
+             })
+            .catch((error) => res.json({ success: false, response: error }))
+    },
 
 
-    // multiplesItineraries: async (req, res) => {
-    //     let itinerary = []
-    //     const data = req.body.data
-    //     let error = null
-    //     try {
-    //         data.map(async (item) => {
-    //             await new Itinerary({
-    //                 name: item.name,
-    //                 population:item.population,
-    //                 description: item.description,
-    //                 image:item.image
-    //             }).save()
-    //         })
-    //     } catch (err) { error = err }
-    //     itinerary = await Itinerary.find()
-    //     res.json({
-    //         response: error ? 'ERROR' : itinerary,
-    //         success: error ? false : true,
-    //         error: error
-    //     })
-    // }
 
 
 }
