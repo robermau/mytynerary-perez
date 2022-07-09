@@ -74,7 +74,9 @@ export default function Details() {
        
         
     )
+   
 
 
+   
 }
 

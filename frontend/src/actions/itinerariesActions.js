@@ -8,7 +8,7 @@ const itinerariesActions = {
             dispatch({ type: 'GET_ITINERARIES', payload: res.data.response.itineraries })
         }
     },
-    getOneItinerary: (id) => {
+    getOneItineraries: (id) => {
         return async (dispatch, getState) => {
             const res = await axios.get(`http://localhost:4000/api/itineraries/${id}`)
             console.log(res)

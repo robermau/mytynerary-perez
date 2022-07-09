@@ -1,48 +1,82 @@
-import { BsHandThumbsUp } from "react-icons/bs"
 import * as React from 'react';
 import Accordion from '@mui/material/Accordion';
+import { Divider, Avatar, Grid, Paper } from "@material-ui/core";
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
-import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import citiesActions from "../actions/citiesActions";
 import itinerariesActions from "../actions/itinerariesActions";
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect, useState } from "react";
+import commentaryActions from '../actions/commentaryActions';
+
 
 
 export default function Itineraries({ id }) {
+
+  const [itinerary, setItinerary] = useState([])
   const [reload, setReload] = useState(false)
   const dispatch = useDispatch()
 
   const user = useSelector(state => state.usersReducers.user)
+  const oneItinerary= useSelector(state =>state.itinerariesReducer.getOneItineraries)
+  console.log(oneItinerary)
+  console.log(user)
   const [likes, setLike] = useState([])
+  const [edit, setEdit] = useState("")
 
- 
+  console.log(itinerary)
 
   useEffect(() => {
-    console.log(likes)
+
     getItineraries()
   }, [reload])
+  console.log(likes)
+  async function getItineraries() {
 
-  async function getItineraries(){
-    const data =  await dispatch(itinerariesActions.findItinerariesFromCity(id))
+    const data = await dispatch(itinerariesActions.findItinerariesFromCity(id))
+    setItinerary(data)
     console.log(data.data.response)
-     setLike(data.data.response)
-    
+    setLike(data.data.response)
+
   }
 
   async function likeandDislike(_id) {
     console.log(_id)
     await dispatch(itinerariesActions.likeDislike(_id))
 
-    // await dispatch(citiesActions.getOneCity())
-
     setReload(!reload)
+  }
+  
+
+ 
+ 
+ 
+  const handleEdit = async (event) => {
+    event.preventDefault()
+    setEdit(event.target.value)
   }
 
 
+  // function changeState() {
+  //   setReload(!reload)
+  // }
 
+  async function handleSubmit(event) {
+    event.preventDefault()
+    
+    const comment = {
+        itineraryId: itinerary?.data.response.map(e => e._id),
+        comment: edit
+    }
+    console.log(comment)
+    await dispatch(commentaryActions.addComment(comment))
+    setReload(!reload)
+  
+}
+  console.log(likes)
+
+
+ 
   return (
     <>
 
@@ -70,9 +104,17 @@ export default function Itineraries({ id }) {
 
           <p className="max-w-2xl text-xl text-gray-900 lg:mx-auto">Duration:{e.duration}</p>
           <div className="svg-like">
-            <button onClick={() => likeandDislike(e._id)}>like</button>
+
+
+            {user ?
+              (<div onClick={() => likeandDislike(e?._id)}>  {e.likes.includes(user.id) ?
+                <span className="material-icons" style={{ color: "red", fontSize: 30 }}>favorite</span> :
+                <span className="material-icons" style={{ color: "red", fontSize: 30 }} >favorite_border</span>}</div>)
+              : (<span style={{ fontSize: 30 }} className="material-icons">favorite_border</span>)
+            }
+
             {e.likes.length}
-            <BsHandThumbsUp />
+
 
           </div>
           <p className="max-w-2xl mt-1 text-xl text-gray-900 lg:mx-auto">
@@ -87,6 +129,7 @@ export default function Itineraries({ id }) {
             >
               <p className="font-activity container-activity">More Info</p>
             </AccordionSummary>
+
             <AccordionDetails >
 
               {e.activitys?.map((activity, index) =>
@@ -96,13 +139,59 @@ export default function Itineraries({ id }) {
                   <img className="image-activity" src={activity.imageActivity} />
                 </div>
               </div>
-              )
-
-
-              )}
-
+              ))}
 
             </AccordionDetails>
+            <div style={{ padding: 14 }} className="App">
+                                            <h3>Comments</h3>
+                                            {e.comments.map(com =>
+                                                <Paper style={{ padding: "40px 20px" }}>
+                                                    <Grid container wrap="nowrap" spacing={2}>
+                                                        <Grid item>
+                                                            <Avatar alt="Remy Sharp" src={e.imagePerson} />
+                                                        </Grid>
+                                                        <Grid justifyContent="left" item xs zeroMinWidth>
+                                                            <h4 style={{ margin: 0, textAlign: "left" }}>{""}</h4>
+                                                            <p>{com.comment}</p>
+                                                            <span  type="submit" class="material-symbols-outlined">
+                                                                delete_sweep
+                                                            </span>
+                                                            <span class="material-symbols-outlined">
+                                                                edit
+                                                            </span>
+
+
+                                                        </Grid>
+                                                    </Grid>
+                                                    <Divider variant="fullWidth" style={{ margin: "30px 0" }} />
+                                                </Paper>)}
+                                                </div>
+
+            <div className="flex bg-gray-800 justify-center items-center">
+
+              <div className=" w-full bg-white p-2 pt-4 rounded shadow-lg">
+                <div className="flex ml-3">
+                  <div className="mr-3">
+                    <img src={user?.imageUser} alt="" className="rounded-full" />
+
+                  </div>
+                  <div>
+                    <h1 className="font-semibold"></h1>
+                    <p className="text-xs text-gray-500">2 seconds ago</p>
+                  </div>
+
+                </div>
+
+                <div  className="mt-3 p-3 w-full">
+                  
+                  <textarea onInput={(event)=> setEdit(event.target.value)}  rows="3" className="border p-2 rounded w-full" placeholder="Write something..."></textarea>
+                </div>
+
+                <div className="flex justify-between mx-3">
+                  <div><button onClick={handleSubmit} type="submit" className="px-4 py-1 bg-gray-800 text-white rounded font-light hover:bg-gray-700">Submit</button></div>
+                </div>
+              </div>
+            </div>
           </Accordion>
         </div>
 
@@ -112,7 +201,7 @@ export default function Itineraries({ id }) {
     </>
 
 
-)
+  )
 
 
 
