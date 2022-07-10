@@ -18,7 +18,7 @@ const commentaryActions = {
                     type: 'message',
                     payload: {
                         view: true,
-                        message: res.data.message,
+                        message: res.data.message, 
                         success: res.data.success
                     }
                 })
@@ -37,7 +37,7 @@ const commentaryActions = {
         }
 
     },
-    modifiComment: (comment) => {
+    modifyComment: (comment) => {
 
         const token = localStorage.getItem('token')
         return async (dispatch, getState) => {
@@ -62,9 +62,9 @@ const commentaryActions = {
 
         const token = localStorage.getItem('token')
         return async (dispatch, getState) => {
-            const res = await axios.post(`http://localhost:4000/api/itinerary/comment${id}`, {}, {
+            const res = await axios.post(`http://localhost:4000/api/comments${id}`, {}, {
                 headers: {
-                    'Authorization': `Bearer ${token}`
+                    'Authorization': 'Bearer '+ token 
                 }
 
             })

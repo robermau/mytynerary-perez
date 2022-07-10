@@ -9,9 +9,10 @@ const itinerariesControlers = {
         let error = null
 
         try {
-            city = await Itinerary.findOne({ city: id }).populate("activitys")
-
-        } catch (err) {
+            itinerary = await Itinerary.findOne({ _id: id })
+             res.json({ success: false, response:{itinerary}}).populate("comments.userid")
+        } 
+        catch (err) {
             error = err
             console.log(error)
         }
@@ -20,7 +21,8 @@ const itinerariesControlers = {
             success: error ? false : true,
             error: error
         })
-    },
+    }, 
+
 
 
 

@@ -16,6 +16,9 @@ const {signUpUsers , logInUser,verifyMail,verifyToken} = usersControlers;
 const activityControlers=require("../controlers/activityControlers")
 const {addActivity,getActivities,findActivityFromItinerary,getOneActivity,modifyActivities} = activityControlers;
 
+const CommentaryControlers = require('../controlers/commentsControlers')
+const {addComment, modifyComment,deleteComment}= CommentaryControlers
+
 
 
 
@@ -27,8 +30,8 @@ Router.route("/multiplesCities").post(multiplesCities)
 
 Router.route("/itineraries").get(getItineraries).post(addItineraries)
 Router.route("/itinerariesbycities/:id").get(findItineraryFromCity)
-.get(getOneItineraries)
-Router.route("/itineraries/:id").put(modifyItinerary)
+
+Router.route("/itinerary/:id").get(getOneItineraries)
   
 Router.route('/itineraries/likes/:id')
 .put(passport.authenticate('jwt',{session:false}),likeDislike)
@@ -37,6 +40,15 @@ Router.route('/itineraries/likes/:id')
 Router.route("/activities").post(addActivity).get(getActivities)
 Router.route("/activitiesbyItineraries/:id").get(findActivityFromItinerary)
 Router.route("/activities/:id").get(getOneActivity)
+
+Router.route('/itinerary/comment')
+.post(passport.authenticate('jwt',{ session: false }),addComment)
+.put(passport.authenticate('jwt',{ session: false }),modifyComment)
+
+Router.route('/itineraries/comment/:id')
+.post(passport.authenticate('jwt',{ session: false }),deleteComment)
+
+
 
 
 

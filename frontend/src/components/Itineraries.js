@@ -48,24 +48,12 @@ export default function Itineraries({ id }) {
   }
   
 
- 
- 
- 
-  const handleEdit = async (event) => {
-    event.preventDefault()
-    setEdit(event.target.value)
-  }
 
 
-  // function changeState() {
-  //   setReload(!reload)
-  // }
-
-  async function handleSubmit(event) {
-    event.preventDefault()
-    
+  async function handleSubmit(id) {
+   
     const comment = {
-        itineraryId: itinerary?.data.response.map(e => e._id),
+        itineraryId:id,
         comment: edit
     }
     console.log(comment)
@@ -80,7 +68,7 @@ export default function Itineraries({ id }) {
   return (
     <>
 
-      {likes.length > 0 && likes.map(e =>
+      {likes.map(e =>
 
         <div key={e._id} className="bg-white container-itinerary radius">
           <div className="w-full text-center rounded-3xl ">
@@ -94,7 +82,7 @@ export default function Itineraries({ id }) {
             />
           </div>
           {e.namePerson}
-
+        
 
           <p className="mt-2 text-3xl font-extrabold leading-8 tracking-tight text-gray-900 sm:text-4xl">
 
@@ -144,7 +132,9 @@ export default function Itineraries({ id }) {
             </AccordionDetails>
             <div style={{ padding: 14 }} className="App">
                                             <h3>Comments</h3>
+                                               
                                             {e.comments.map(com =>
+                                        
                                                 <Paper style={{ padding: "40px 20px" }}>
                                                     <Grid container wrap="nowrap" spacing={2}>
                                                         <Grid item>
@@ -164,7 +154,8 @@ export default function Itineraries({ id }) {
                                                         </Grid>
                                                     </Grid>
                                                     <Divider variant="fullWidth" style={{ margin: "30px 0" }} />
-                                                </Paper>)}
+                                                </Paper>
+                                                   )}
                                                 </div>
 
             <div className="flex bg-gray-800 justify-center items-center">
@@ -188,7 +179,7 @@ export default function Itineraries({ id }) {
                 </div>
 
                 <div className="flex justify-between mx-3">
-                  <div><button onClick={handleSubmit} type="submit" className="px-4 py-1 bg-gray-800 text-white rounded font-light hover:bg-gray-700">Submit</button></div>
+                  <div><button onClick={()=>handleSubmit(e._id)} type="submit" className="px-4 py-1 bg-gray-800 text-white rounded font-light hover:bg-gray-700">Submit</button></div>
                 </div>
               </div>
             </div>

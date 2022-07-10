@@ -10,9 +10,10 @@ const itinerariesActions = {
     },
     getOneItineraries: (id) => {
         return async (dispatch, getState) => {
-            const res = await axios.get(`http://localhost:4000/api/itineraries/${id}`)
+            const res = await axios.get(`http://localhost:4000/api/itinerary/${id}`)
             console.log(res)
             dispatch({ type: 'GET_ONE_ITINERARY', payload: res.data.response })
+            return res
         }
     },
     findItinerariesFromCity: (id) => {
