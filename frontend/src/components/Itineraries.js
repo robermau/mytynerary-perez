@@ -19,52 +19,58 @@ export default function Itineraries({ id }) {
 
   const user = useSelector(state => state.usersReducers.user)
   const oneItinerary= useSelector(state =>state.itinerariesReducer.getOneItineraries)
-  console.log(oneItinerary)
-  console.log(user)
+  // console.log(oneItinerary)
+  // console.log(user)
   const [likes, setLike] = useState([])
   const [edit, setEdit] = useState("")
 
-  console.log(itinerary)
+  // console.log(itinerary)
 
   useEffect(() => {
 
     getItineraries()
   }, [reload])
-  console.log(likes)
+  // console.log(likes)
   async function getItineraries() {
 
     const data = await dispatch(itinerariesActions.findItinerariesFromCity(id))
     setItinerary(data)
-    console.log(data.data.response)
+    // console.log(data.data.response)
     setLike(data.data.response)
 
   }
 
   async function likeandDislike(_id) {
-    console.log(_id)
+    // console.log(_id)
     await dispatch(itinerariesActions.likeDislike(_id))
 
     setReload(!reload)
   }
-  
 
+ async function handleDelete (id) {
+
+    const rest = await dispatch(commentaryActions.deleteComment(id))
+    console.log(id)
+    console.log(rest)
+   setReload(!reload)
+ }
 
 
   async function handleSubmit(id) {
-   
+
     const comment = {
         itineraryId:id,
         comment: edit
     }
-    console.log(comment)
+    // console.log(comment)
     await dispatch(commentaryActions.addComment(comment))
     setReload(!reload)
-  
+
 }
-  console.log(likes)
+  // console.log(likes)
 
 
- 
+
   return (
     <>
 
@@ -82,7 +88,7 @@ export default function Itineraries({ id }) {
             />
           </div>
           {e.namePerson}
-        
+
 
           <p className="mt-2 text-3xl font-extrabold leading-8 tracking-tight text-gray-900 sm:text-4xl">
 
@@ -132,9 +138,9 @@ export default function Itineraries({ id }) {
             </AccordionDetails>
             <div style={{ padding: 14 }} className="App">
                                             <h3>Comments</h3>
-                                               
+
                                             {e.comments.map(com =>
-                                        
+
                                                 <Paper style={{ padding: "40px 20px" }}>
                                                     <Grid container wrap="nowrap" spacing={2}>
                                                         <Grid item>
@@ -143,7 +149,7 @@ export default function Itineraries({ id }) {
                                                         <Grid justifyContent="left" item xs zeroMinWidth>
                                                             <h4 style={{ margin: 0, textAlign: "left" }}>{""}</h4>
                                                             <p>{com.comment}</p>
-                                                            <span  type="submit" class="material-symbols-outlined">
+                                                            <span  onClick={()=>handleDelete(com._id)} type="submit" class="material-symbols-outlined">
                                                                 delete_sweep
                                                             </span>
                                                             <span class="material-symbols-outlined">
@@ -174,7 +180,7 @@ export default function Itineraries({ id }) {
                 </div>
 
                 <div  className="mt-3 p-3 w-full">
-                  
+
                   <textarea onInput={(event)=> setEdit(event.target.value)}  rows="3" className="border p-2 rounded w-full" placeholder="Write something..."></textarea>
                 </div>
 

@@ -59,10 +59,10 @@ const commentaryActions = {
         }
     },
     deleteComment: (id) => {
-
+      console.log(id)
         const token = localStorage.getItem('token')
         return async (dispatch, getState) => {
-            const res = await axios.post(`http://localhost:4000/api/comments${id}`, {}, {
+            const res = await axios.post(`http://localhost:4000/api/itineraries/comment/${id}`, {}, {
                 headers: {
                     'Authorization': 'Bearer '+ token 
                 }

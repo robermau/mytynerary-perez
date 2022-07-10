@@ -37,7 +37,7 @@ const CommentaryControlers = {
         const commentId = req.params.id
         // const user = req.user._id
         try {
-            const deleteComment = await itinerary.findOneAndUpdate({ "comments._id": commentId }, { $pull: { comment: { _id: commentId } } }, { new: true })
+            const deleteComment = await itinerary.findOneAndUpdate({ "comments._id": commentId }, { $pull: { comments: { _id: commentId } } }, { new: true })
            console.log(deleteComment)
             res.json({
                 success: true,
