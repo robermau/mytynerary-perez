@@ -25,7 +25,7 @@ function classNames(...classes) {
 export default function Details() {
 
     const { id } = useParams()
-    console.log(id)
+    
     //  const [city, setCity] = useState({})
     const dispatch = useDispatch();
     useEffect(() => {
@@ -36,9 +36,9 @@ export default function Details() {
 // eslint-disable-next-line
     }, [id])
   const city =  useSelector (store => store.citiesReducers.oneCity)
-  console.log(city)
+  
   const itineraries= useSelector(store=>store.itinerariesReducer.getItinerariesFromCity)
- console.log(itineraries)
+ 
 
     return (
         <div className='mainCardContainer'>

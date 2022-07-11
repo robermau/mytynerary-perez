@@ -13,16 +13,16 @@ export default function GoogleSignIn() {
 
 
     async function handleCallbackResponse(response) {
-        console.log(response.credential);
+        
         let userObject = jwt_decode(response.credential);
-        console.log(userObject);
+        
         const res = await  dispatch(userActions.logInUser({
            email: userObject.email,
             password: userObject.sub,
            from: "google"
         }))
 
-        console.log(res)
+       
     if (res.data.success) {
         toast.success(res.data.message)
       } else {

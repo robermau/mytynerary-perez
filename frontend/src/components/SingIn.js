@@ -19,14 +19,13 @@ const navigate = useNavigate()
   const handleSubmit = async (event) => {
     event.preventDefault()
     
-    console.log(event)
     const logedUser = {
       password: event.target[3].value,
       email: event.target[2].value,
       from: "form-Signin",
     }
     const res = await dispatch(userActions.logInUser(logedUser))
-    console.log(res)
+    
 
     if (res.data.success) {
       toast.success(res.data.message)
@@ -44,7 +43,7 @@ const navigate = useNavigate()
     <form onSubmit={handleSubmit} className="min-h-screen bg-login">
       <div className="flex flex-col items-center justify-center">
 
-        <div className="w-full p-10 mt-16 bg-orange-100 rounded shadow login ">
+        <div className="w-full p-10 bg-orange-100 rounded shadow mb-14 mt-14 login ">
           <p tabIndex={0} className="text-2xl font-extrabold leading-6 text-gray-800">
             Login to your account
           </p>

@@ -15,7 +15,7 @@ export default function SingUp() {  // camputramos lso datos del usuaroio
 
   const handleSubmit = async (event) => {  // cuando hacemos en el submit se crea la const userdata
     event.preventDefault()
-    console.log(event)
+   
 
     const userData = {  // se guardan en e lmodelo
       firstName: event.target[0].value,
@@ -29,9 +29,9 @@ export default function SingUp() {  // camputramos lso datos del usuaroio
     }
 
     const res = await dispatch(userActions.signUpUsers(userData))
-    console.log(res)
+   
     const errorValidator = res.data.message
-    console.log(errorValidator)
+    
 
  
 

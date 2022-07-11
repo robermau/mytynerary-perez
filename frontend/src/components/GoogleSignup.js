@@ -14,9 +14,9 @@ export default function GoogleSignUp(props) {
 
     async function handleCallbackResponse(response) {
    
-        console.log(response.credential); // el response son los datos del usuario
+        // el response son los datos del usuario
         let userObject = jwt_decode(response.credential); // coon jwt desestructurmaos la respuesta
-        console.log(userObject);
+   
         
         const res = await dispatch(userActions.signUpUsers({
             firstName: userObject.given_name,
@@ -29,9 +29,9 @@ export default function GoogleSignUp(props) {
         }))
 
       
-        console.log(res)
+       
         const errorValidator = res.data.message
-        console.log(errorValidator)
+        
     
       
     

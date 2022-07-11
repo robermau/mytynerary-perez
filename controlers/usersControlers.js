@@ -201,12 +201,15 @@ const usersControllers = {
             message: `email has not been confirmed yet`
         })
     },
+
+
+
     verifyToken: (req, res) => {
             console.log(req.user)
         if (req, res) {
             res.json({
                 success: true,
-                response: { id: req.user.id, firstName: req.user.firstName, email: req.user.email, from: 'token' },
+                response: { id: req.user.id, firstName: req.user.firstName, email: req.user.email,imageUser:req.user.imageUser, from: 'token' },
                 message: "Welcome " + req.user.firstName
             })
         } else {

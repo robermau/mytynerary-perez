@@ -8,6 +8,8 @@ import itinerariesActions from "../actions/itinerariesActions";
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect, useState } from "react";
 import commentaryActions from '../actions/commentaryActions';
+import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
 
 
 
@@ -19,8 +21,8 @@ export default function Itineraries({ id }) {
 
   const user = useSelector(state => state.usersReducers.user)
   const oneItinerary= useSelector(state =>state.itinerariesReducer.getOneItineraries)
-  // console.log(oneItinerary)
-  // console.log(user)
+ 
+  
   const [likes, setLike] = useState([])
   const [edit, setEdit] = useState("")
 
@@ -42,19 +44,51 @@ export default function Itineraries({ id }) {
 
   async function likeandDislike(_id) {
     // console.log(_id)
-    await dispatch(itinerariesActions.likeDislike(_id))
+    let res= await dispatch(itinerariesActions.likeDislike(_id))
 
     setReload(!reload)
+    if (res.data.success) {
+      toast.success(res.data.message)
+  } else {
+      toast.error(res.data.message);
+  }
+
+
   }
 
  async function handleDelete (id) {
 
-    const rest = await dispatch(commentaryActions.deleteComment(id))
-    console.log(id)
-    console.log(rest)
+    let res = await dispatch(commentaryActions.deleteComment(id))
+    
+    
    setReload(!reload)
+
+
+   if (res.data.success) {
+    toast.success(res.data.message)
+} else {
+    toast.error(res.data.message);
+}
  }
 
+
+ async function handleModifyComment (id) {
+  
+ const commentData = {
+  commentId:id,
+  comment:edit
+ }
+
+ let res= await dispatch(commentaryActions.modifyComment(commentData))
+setReload(!reload)
+
+
+if (res.data.success) {
+  toast.success(res.data.message)
+} else {
+  toast.error(res.data.message);
+}
+ }
 
   async function handleSubmit(id) {
 
@@ -62,21 +96,27 @@ export default function Itineraries({ id }) {
         itineraryId:id,
         comment: edit
     }
-    // console.log(comment)
-    await dispatch(commentaryActions.addComment(comment))
+
+    let res = await dispatch(commentaryActions.addComment(comment))
     setReload(!reload)
 
+    if (res.data.success) {
+      toast.success(res.data.message)
+  } else {
+      toast.error(res.data.message);
+  }
+
 }
-  // console.log(likes)
+  const comment = likes.map(d => d.comments)
 
 
 
   return (
     <>
 
-      {likes.map(e =>
+      {likes.map((e,index) =>
 
-        <div key={e._id} className="bg-white container-itinerary radius">
+        <div key={index} className="bg-white container-itinerary radius">
           <div className="w-full text-center rounded-3xl ">
             <h2 className="text-5xl itinerary">{e.nameItinerary}</h2>
           </div>
@@ -101,6 +141,7 @@ export default function Itineraries({ id }) {
 
 
             {user ?
+            
               (<div onClick={() => likeandDislike(e?._id)}>  {e.likes.includes(user.id) ?
                 <span className="material-icons" style={{ color: "red", fontSize: 30 }}>favorite</span> :
                 <span className="material-icons" style={{ color: "red", fontSize: 30 }} >favorite_border</span>}</div>)
@@ -139,22 +180,27 @@ export default function Itineraries({ id }) {
             <div style={{ padding: 14 }} className="App">
                                             <h3>Comments</h3>
 
-                                            {e.comments.map(com =>
+                                            {e.comments.map((com,index) =>
 
-                                                <Paper style={{ padding: "40px 20px" }}>
-                                                    <Grid container wrap="nowrap" spacing={2}>
+                                                <Paper key={index} style={{ padding: "40px 20px" }}>
+                                                    <Grid container wrap="nowrap">
                                                         <Grid item>
-                                                            <Avatar alt="Remy Sharp" src={e.imagePerson} />
+                                                            <Avatar alt="Remy Sharp" src={com.imageUser} />
+                                                            <p>{com.firstName}</p>
                                                         </Grid>
-                                                        <Grid justifyContent="left" item xs zeroMinWidth>
+                                                     
+                                                        <Grid container  justifyContent="space-around" alignItems='center' item xs zeroMinWidth>
                                                             <h4 style={{ margin: 0, textAlign: "left" }}>{""}</h4>
-                                                            <p>{com.comment}</p>
-                                                            <span  onClick={()=>handleDelete(com._id)} type="submit" class="material-symbols-outlined">
+                                                            
+                                                         <p  onInput={(event)=> setEdit(event.currentTarget.textContent)} suppressContentEditableWarning  contentEditable>{com.comment}</p>
+                                            
+                                                            {com?.userid == user?.id ?  (<>
+                                                            <span  onClick={()=>handleDelete(com._id)} type="submit" className="material-symbols-outlined">
                                                                 delete_sweep
                                                             </span>
-                                                            <span class="material-symbols-outlined">
+                                                            <span  onClick={()=>handleModifyComment(com._id)}className="material-symbols-outlined">
                                                                 edit
-                                                            </span>
+                                                            </span></>) :(null)}
 
 
                                                         </Grid>
@@ -164,9 +210,9 @@ export default function Itineraries({ id }) {
                                                    )}
                                                 </div>
 
-            <div className="flex bg-gray-800 justify-center items-center">
+            <div className="flex items-center justify-center bg-gray-800 textArea">
 
-              <div className=" w-full bg-white p-2 pt-4 rounded shadow-lg">
+              <div className="w-full p-2 pt-4 bg-white rounded shadow-lg textArea">
                 <div className="flex ml-3">
                   <div className="mr-3">
                     <img src={user?.imageUser} alt="" className="rounded-full" />
@@ -174,18 +220,18 @@ export default function Itineraries({ id }) {
                   </div>
                   <div>
                     <h1 className="font-semibold"></h1>
-                    <p className="text-xs text-gray-500">2 seconds ago</p>
+                    <p className="text-lg text-white ">Leave here you comment</p>
                   </div>
 
                 </div>
 
-                <div  className="mt-3 p-3 w-full">
+                <div  className="w-full p-3 mt-3">
 
-                  <textarea onInput={(event)=> setEdit(event.target.value)}  rows="3" className="border p-2 rounded w-full" placeholder="Write something..."></textarea>
+                  <textarea onInput={(event)=> setEdit(event.target.value)}  rows="3" className="w-full p-2 border rounded" placeholder="Write something..."></textarea>
                 </div>
 
-                <div className="flex justify-between mx-3">
-                  <div><button onClick={()=>handleSubmit(e._id)} type="submit" className="px-4 py-1 bg-gray-800 text-white rounded font-light hover:bg-gray-700">Submit</button></div>
+                <div className="flex justify-between mx-3  border-btn">
+                  <div><button onClick={()=>handleSubmit(e._id)} type="submit" className="px-4 py-1 font-light text-white bg-gray-800 rounded border-btn hover:bg-gray-700">Submit</button></div>
                 </div>
               </div>
             </div>

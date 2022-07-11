@@ -26,7 +26,7 @@ export default function Navbar() {
 
   const dispatch = useDispatch()
   const user = useSelector(store => store.usersReducers.user)
-console.log(user)
+
   function handleClick() {
     dispatch(userActions.logOutUser())
   }
@@ -57,9 +57,9 @@ console.log(user)
 
       <Menu as="div" className="">
         <div className="user">
-          <Menu.Button className="text-sm rounded-full focus:outline-none focus:ring-offset-2 focus:ring-white">
-    { !user ? (<img className="w-10 mt-5 mr-5 rounded-full h-15" src="https://w7.pngwing.com/pngs/789/888/png-transparent-computer-icons-login-person-user-avatar-log-smiley-desktop-wallpaper-sign.png" alt="" />
-    ) :  (<img className="w-10 mt-5 mr-5 rounded-full h-15" src={user.imageUser} alt="" />)
+          <Menu.Button className="text-sm rounded-full ">
+    { !user ? (<img className=" w-14   mt-5 mr-5 rounded-full h-15" src="https://w7.pngwing.com/pngs/789/888/png-transparent-computer-icons-login-person-user-avatar-log-smiley-desktop-wallpaper-sign.png" alt="" />
+    ) :  (<img className="w-14 mt-5 mr-5 rounded-full h-15" src={user.imageUser} alt="" />)
 
     } 
             

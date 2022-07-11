@@ -427,6 +427,7 @@ font-size:.8rem;
 }
 .font-activity {
   font-weight:bold;
+  color:white;
   font-size:1rem;
   text-align:center;
 }
@@ -593,4 +594,36 @@ container {
 
     .login {
      width:20rem;
+     border-radius: 5rem;
     }
+   .MuiPaper-root {
+    box-shadow:none !important;
+   }
+
+
+   .MuiAccordionDetails-root,.MuiButtonBase-root  {
+    background-color:#853500!important;
+   }
+
+
+   .App {
+    background-color:#853500
+   }
+
+   .MuiPaper-rounded{
+    border-radius:2rem!important;
+   
+
+  
+   }
+.MuiPaper-root{
+   margin-top:1rem!important;}
+
+
+   .textArea{
+    background-color:#853500;
+   }
+
+   .border-btn{
+    border-raidus:5rem;
+   }

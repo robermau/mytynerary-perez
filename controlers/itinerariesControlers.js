@@ -138,11 +138,11 @@ console.log(id)
               if (itineraries.likes.includes(user)) {
                     console.log(itineraries)
                      Itinerary.findOneAndUpdate({ _id: id }, { $pull: { likes: user } }, { new: true })//PULL QUITA, SACA
-                        .then((response) => res.json({ success: true, response: response.likes }))
+                        .then((response) => res.json({ success: true, response: response.likes , message:"Your are not like yet" }))
                         .catch((error) => console.log(error))
                } else {
                     Itinerary.findOneAndUpdate({ _id: id }, { $push: { likes: user } }, { new: true })//PUSH AGREGA
-                        .then((response) => res.json({ success: true, response: response.likes }))
+                        .then((response) => res.json({ success: true, response: response.likes,  message:"Thank for your like" }))
                         .catch((error) => console.log(error))
                 }
              })

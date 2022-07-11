@@ -49,7 +49,7 @@ const userActions = {
 
     },
     verifyToken: (token) => {
-        console.log(token)
+        
         return async (dispatch, getState) => {
 
             await axios.get('http://localhost:4000/api/auth/token', {  // la ruta recibe a traveza del header el metodo de authorizacion bearer

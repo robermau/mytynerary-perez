@@ -15,6 +15,7 @@ import SingIn from "./components/SingIn"
 import SignUp from "./components/SignUp"
 import { ToastContainer } from 'react-toastify';
 import userActions from "./actions/userActions.js";
+import ScrollTop from "./components/ScrollTotop"
 
 
 
@@ -72,7 +73,7 @@ useEffect(() => {
         smooth
         component={<ArrowCircleUpIcon />}
       />
-         
+         <ScrollTop></ScrollTop>
          <Footer />
        </div>
 
